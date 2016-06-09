@@ -1,0 +1,311 @@
+<div class="title">
+
+  <md-content layout-xs="column" layout="row" class="main_content">
+    <!-- <div flex-xs flex-gt-xs="65">
+  -->
+  <div class="col1" flex-xs flex-gt-xs="65">
+    <div layout="column">
+
+      <md-card class="card1">
+        <div layout="row" layout-align="start" flex="offset">
+        </div>
+        <md-card-content>
+          <md-list>
+            <md-list-item class="md-3-line">
+              <div layout="column" class="md-list-item-text lay">
+                 <div ng-repeat="item2 in array2 ">
+                <h4>{{item2.data}}</h4>
+              </div>
+              <!-- <md-virtual-repeat-container id="horizontal-container" md-orient-horizontal>
+                <div md-virtual-repeat="item2 in array2"
+                class="repeated-item" flex>
+                {{item2}}
+              </div>
+            </md-virtual-repeat-container> -->
+
+
+          </div>
+
+
+          <!-- <md-divider ng-if="!$last"></md-divider> -->
+        </md-list-item>
+      </md-list>
+    </md-card-content>
+  </md-card>
+
+  <div layout="column" flex-xs flex-gt-xs="65">
+    <md-card class="card2">
+
+      <md-card-title-text>
+        <span class="md-headline">
+          <i class="material-icons plan_icon">event_available</i>&nbsp;
+          <head>My current plan </head>
+
+
+        </md-card-title-text>
+
+
+        <md-card-content>
+
+          <div ng-cloak class="tabsdemoDynamicHeight">
+            <md-content>
+              <md-tabs md-dynamic-height="" md-border-bottom="">
+                <md-tab label="Completed">
+                  <md-content class="md-padding">
+                    <md-list>
+                      <md-list-item class="md-line" ng-repeat="x in completed">
+                        <div class="md-list-item-text itemtext">
+                          <h5>{{x}}</h5>
+
+                        </div>
+                        <!-- <md-button class="md-secondary" style="color:#70b900">Edit</md-button> -->
+                        <div layout="row" layout-align="end center" class="container"
+                        >
+
+                        <md-button class="md-raised md-warn show_sum"
+                        data-toggle="modal" data-target="#myModal">Show
+                        Summary
+                      </md-button>
+
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close"
+                              data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">This is the summary
+                                of your travel</h4>
+                              </div>
+                              <div class="modal-body">
+                                <p>Some text in the modal.</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button"
+                                class="btn btn-default"
+                                data-dismiss="modal">Close
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                  </md-list-item>
+                </md-list>
+
+              </md-content>
+            </md-tab>
+            <md-tab label="Current">
+              <md-content class="md-padding">
+                <md-list>
+                  <md-list-item class="md-line" ng-repeat="y in current">
+                    <div class="md-list-item-text itemtext">
+                      <h5>{{y}}</h5>
+
+                    </div>
+                    <!-- <md-button class="md-secondary" style="color:#70b900">Edit</md-button> -->
+                    <div layout="row" layout-align="end center" class="container"
+                    >
+
+                    <md-button class="md-raised md-warn show_sum"
+                    data-toggle="modal" data-target="#myModal">Show
+                    Summary
+                  </md-button>
+
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close"
+                          data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">This is the summary
+                            of your travel</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p>Some text in the modal.</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button"
+                            class="btn btn-default"
+                            data-dismiss="modal">Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+              </md-list-item>
+            </md-list>
+
+          </md-content>
+        </md-tab>
+        <md-tab label="Future">
+          <md-content class="md-padding">
+            <md-list>
+              <md-list-item class="md-line" ng-repeat="z in future">
+                <div class="md-list-item-text itemtext">
+                  <h5>{{z}}</h5>
+
+                </div>
+                <!-- <md-button class="md-secondary" style="color:#70b900">Edit</md-button> -->
+                <div layout="row" layout-align="end center" class="container"
+                >
+
+                <md-button class="md-raised md-warn show_sum"
+                data-toggle="modal" data-target="#myModal">Show
+                Summary
+              </md-button>
+
+
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close"
+                      data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">This is the summary
+                        of your travel</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button"
+                        class="btn btn-default"
+                        data-dismiss="modal">Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <md-divider ng-if="!$last"></md-divider>
+          </md-list-item>
+        </md-list>
+      </md-content>
+    </md-tab>
+  </md-tabs>
+</md-content>
+</div>
+
+</md-card-content>
+</md-card>
+</div>
+<md-card class="card3">
+  <span class="md-headline">
+    <i class="material-icons">check_box</i>&nbsp;
+    My Worklist</span>
+    <md-card-content>
+      <md-list>
+        <md-list-item ng-repeat="item in messages">
+          <div class="md-list-item-text">
+            <h5>{{item.what}}</h5>
+
+          </div>
+          <!--  <i class="material-icons" style="color:red;">warning</i> -->
+          <md-button class="md-secondary res">Respond</md-button>
+          <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+      </md-list>
+    </md-card-content>
+  </md-card>
+</div>
+
+</div>
+<div class="button_flex col2" flex-xs flex-gt-xs="35">
+  <div>
+    <!--  <md-button class="md-raised md-warn main_buttons" ng-click="go('Travelbooking')">Book</md-button>  -->
+    <md-button class="md-raised md-warn main_buttons" ng-click="showAdvanced($event)">Book</md-button>
+    <md-button class="md-raised md-warn main_buttons2" ng-click="go('trainsearchresult')">Expenses
+    </md-button>
+    <md-button class="md-raised md-warn main_buttons3" ng-click="go('Hotelbooking')">Configure</md-button>
+  </div>
+  <div layout="column" flex-xs flex-gt-xs="100">
+    <md-card id="fav">
+      <md-card-title-text>
+        <span class="md-headline">
+          <i id="fav_icon" class="material-icons">favorite</i> &nbsp; My Favourites
+          <div class="fav_icons">
+            <i id="fav_icon1" class="material-icons" ng-click="fav('local')">room</i>
+            <i id="fav_icon2" class="material-icons" ng-click="fav('global')">public</i>
+          </div>
+        </span>
+      </md-card-title-text>
+      <md-card-content>
+        <md-list>
+          <md-list-item ng-repeat="item1 in localit">
+            <div class="md-list-item-text">
+              <a href="#"><h5>{{item1}}</h5></a>
+
+            </div>
+            <!-- <md-button class="md-secondary" style="color:orange;">Book</md-button> -->
+            <md-divider ng-if="!$last"></md-divider>
+          </md-list-item>
+        </md-list>
+      </md-card-content>
+    </md-card>
+  </div>
+  <div layout="column" flex-xs flex-gt-xs="100">
+    <!-- <md-card>
+    <img src="image/cal3.gif">
+  </md-card> -->
+
+  <md-card id="calendar">
+
+    <md-card-title-text>
+      <span class="md-headline">
+        <i id="cal" class="material-icons">flight</i> My Travel Calendar</span>
+        <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->
+      </md-card-title-text>
+      <!-- <md-card-title> -->
+      <!--  <img src="images/calender-heading-back.png" alt=""> -->
+      <div id="calctrl">
+
+        <calendar-md id="cal_layout" flex layout layout-fill
+
+        calendar-direction="direction"
+        on-prev-month="prevMonth"
+        on-next-month="nextMonth"
+        on-day-click="dayClick"
+        title-format="'MMMM y'"
+        ng-model='selectedDate'
+        week-starts-on="firstDayOfWeek"
+        data-start-month="3"
+        data-start-year="2016"
+        tooltips="tooltips"
+        day-format="dayFormat"
+        day-label-format="'EEE'"
+        day-label-tooltip-format="'EEEE'"
+        day-tooltip-format="'fullDate'"
+        day-content="setDayContent"
+        disable-future-selection="false"
+        ></calendar-md>
+        <div id="cal1" layout="row" layout-align="space-between center">
+          <div id="cal2"></div>
+          Approved Travel
+          <div id="cal3"></div>
+          past Travel
+          <div id="cal4"></div>
+          Pending Travel
+        </div>
+      </div>
+
+
+      <!-- </md-card-title> -->
+    </md-card>
+  </div>
+
+
+</div>

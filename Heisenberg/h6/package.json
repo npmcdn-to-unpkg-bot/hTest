@@ -1,0 +1,50 @@
+{
+  "name": "Heisenberg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kshitijjain/Heisenberg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kshitijjain/Heisenberg/issues"
+  },
+  "homepage": "https://github.com/kshitijjain/Heisenberg#readme",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
+    "angular-dynamic-locale": "^0.1.32",
+    "angular-material": "^1.0.8",
+    "angular-material-calendar": "^0.2.14",
+    "angular-material-icons": "^0.7.0",
+    "angular-messages": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "angular-sanitize": "^1.5.5",
+    "angular-ui-router": "^0.3.0",
+    "body-parser": "~1.13.2",
+    "bootstrap": "^3.3.6",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "^2.4.2",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "jquery": "^2.2.3",
+    "mdPickers": "^0.7.2",
+    "moment": "^2.13.0",
+    "mongoose": "^4.4.19",
+    "morgan": "~1.6.1",
+    "node-static": "^0.7.7",
+    "path": "latest",
+    "q": "^1.4.1",
+    "serve-favicon": "~2.3.0",
+    "ng-toast":"2.0.0"
+  }
+}

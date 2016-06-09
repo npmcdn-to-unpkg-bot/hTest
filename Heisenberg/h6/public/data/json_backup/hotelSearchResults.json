@@ -1,0 +1,146 @@
+[
+{
+	"name": "Lemon Tree Hotel",
+	"city": "Pune",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": "Rs. 5400/day",
+	"imageUrl": "public/assets/images/1.jpg"
+},
+{
+	"name": "St. Laurn Business Hotel",
+	"city": "Pune",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": "Rs. 1700/day",
+	"imageUrl": "public/assets/images/2.jpg"
+},
+{
+	"name": "The O Hotel",
+	"city": "Pune",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": "Rs. 3000/day",
+	"imageUrl": "public/assets/images/3.jpg"
+},
+{
+	"name": "Aurora",
+	"city": "Pune",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": "Rs. 4300/day",
+	"imageUrl": "public/assets/images/4.jpg"
+},
+{
+	"name": "Hotel Sagar Plaza",
+	"city": "Pune",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": "Rs. 2500/day",
+	"imageUrl": "public/assets/images/5.jpg"
+},
+{
+	"name": "The Centurian Hotel",
+	"city": "Pune",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": "Rs. 4700/day",
+	"imageUrl": "public/assets/images/6.jpg"
+},
+{
+	"name": "The E Square",
+	"city": "Pune",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": "Rs. 3500/day",
+	"imageUrl": "public/assets/images/7.jpg"
+},
+{
+	"name": "Golden Emarald Hotel",
+	"city": "Pune",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": "Rs. 7000/day",
+	"imageUrl": "public/assets/images/8.jpg"
+}
+]

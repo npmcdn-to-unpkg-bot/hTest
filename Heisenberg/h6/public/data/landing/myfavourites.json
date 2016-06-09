@@ -1,0 +1,12 @@
+
+{
+"local":
+  {
+    "data": ["Travel from Chennai to Banglore","Lemon Tree hotel in Chennai","Travel from Bangalore to Hyderabad"]
+    },
+
+  "global":
+   {
+     "data": ["Travel from Chennai to Chicago","Travel from Bangalore to London"]
+   }
+}

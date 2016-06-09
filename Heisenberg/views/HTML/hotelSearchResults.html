@@ -1,0 +1,345 @@
+			<link rel="stylesheet" href="public/css/hotelSearchResults.css">
+
+			<div class='container' layout='row' id='main-wrapper'>
+				<div flex='25' id='filter-wrapper'>
+					<md-card>
+						<md-card-content layout='column'>
+							<p><b>Rating:</b></p>
+							<md-checkbox class='md-primary'>
+								<i class="material-icons star-rating">star star star star star</i>
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								<i class="material-icons star-rating">star star star star</i>
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								<i class="material-icons star-rating">star star star</i>
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								<i class="material-icons star-rating">star star</i>
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								<i class="material-icons star-rating">star</i>
+							</md-checkbox>
+						</md-card-content>
+					</md-card>
+
+					<md-card>
+						<md-card-content layout='column'>
+							<p><b>Amenities:</b></p>
+							<md-checkbox class='md-primary'>
+								<div layout='row'>
+									<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								</div>
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								<div layout='row'>
+									<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								</div>
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								<div layout='row'>
+									<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+								</div>
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								<div layout='row'>
+									<i class="material-icons">pool</i><span>Swimming Pool</span>
+								</div>
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								<div layout='row'>
+									<i class="material-icons">fitness_center</i><span>Gymnasium</span>
+								</div>
+							</md-checkbox>
+						</md-card-content>
+					</md-card>
+
+					<md-card>
+						<md-card-content layout='column'>
+							<p><b>Location:</b></p>
+							<md-checkbox class='md-primary'>
+								Lonavala
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								Lavasa
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								Shivaji Nagar
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								Pushpam Colony
+							</md-checkbox>
+							<md-checkbox class='md-primary'>
+								Mansarovar
+							</md-checkbox>
+						</md-card-content>
+					</md-card>
+				</div>
+
+				<div flex='75' flex-sm='100' flex-xs='100' id='results-wrapper'>
+					<md-card ng-repeat='searchResult in searchresults' class='results-card' layout='row' layout-wrap>
+						<img flex='20' ng-src="{{searchResult.imageUrl}}" alt="searchResult.name" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>{{searchResult.name}}</h4>
+							</div>
+							<div>
+								{{searchResult.city}}
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<div ng-repeat='amenity in searchResult.amenities'>
+								<i class="material-icons">{{amenity.iconCode}}</i><span class='facilities-text'>{{amenity.name}}</span>
+								</div>
+								<!-- <i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span> -->
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>{{searchResult.price}}</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
+
+					<!-- <md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/1.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>Lemon Tree Hotel</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 5400/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
+
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/2.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>St. Laurn Business Hotel</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 1700/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
+
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/3.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>The O Hotel</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 3000/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
+
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/4.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>Aurora</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 4300/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
+
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/5.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>Hotel Sagar Plaza</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 2500/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
+
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/6.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>The Centurian Hotel</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 4700/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
+
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/7.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>The E Square</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 3500/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card>
+
+					<md-card class='results-card' layout='row' layout-wrap>
+						<img flex='20' src="public/assets/images/8.jpg" alt="lemonTreeHotelPune" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>Golden Emarald Hotel</h4>
+							</div>
+							<div>
+								Pune
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span>
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>Rs. 7000/day</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+					</md-card> -->
+				</div>
+		    </div>
+</body>

@@ -1,0 +1,41 @@
+
+<md-card ng-if="flightRenderer.childFieldsData != undefined">
+  <md-card-title>
+    {{flightRenderer.cardHeading}}
+
+  </md-card-title>
+  <!-- <div ng-repeat="childFieldsData in flightRenderer.childFieldsData"> -->
+    <md-divider layout-margin></md-divider>
+    <div layout-margin ng-if="flightRenderer.childFieldsData.state == 'initial' || flightRenderer.childFieldsData.state == 'request'">
+
+      <child-form-renderer fields-data="flightRenderer.childFieldsData.requested" fields-meta-data="flightRenderer.metaDataOfChildFields"></child-form-renderer>
+
+
+    </div>
+    <div layout-margin ng-if="flightRenderer.childFieldsData.state == 'select'">
+      <!-- Insert read only component of flight -->
+
+
+      <div layout="row" layout-margin>
+        <div flex="80" layout-margin>
+          <flight-selected-data-renderer index="{{$index}}" selected-meta-data="flightRenderer.childFieldsData.selected" delete-selected-flight-child=flightRenderer.onDelete(index) edit-selected-flight-child=flightRenderer.onEdit(index)>
+          </flight-selected-data-renderer>
+
+      </div>
+
+      <div flex="20" layout="row"  layout-align="center center">
+        <ng-md-icon flex="45" size="35px" icon="delete" ng-click="flightRenderer.onDelete($index) "></ng-md-icon>
+        <ng-md-icon flex="45" flex-offset="5"  size="35px" icon="mode_edit"
+        ng-click="flightRenderer.onEdit()"></ng-md-icon>
+      </div>
+    </div>
+    </div>
+    <!-- <div ng-if="childFieldsData.status=='selected'">
+    {{childFieldsData.status}}
+    <child-selected-data-renderer-component value="childFieldsData"
+    get-mode-pref="flightRenderer.getModePref('flight')"
+    get-seat-pref="flightRenderer.getSeatPref('flight')"></child-selected-data-renderer-component>
+  </div> -->
+  <md-divider layout-margin></md-divider>
+<!-- </div> -->
+</md-card>

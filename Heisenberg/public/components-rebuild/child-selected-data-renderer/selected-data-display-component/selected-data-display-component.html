@@ -1,0 +1,49 @@
+
+<div layout="row" layout-align="center center" id="content">
+  <div  flex="100" flex-offset="5" flex-xs="70">
+    <div layout="row"  layout-xs="column">
+      <div flex="30" flex-xs="70">
+        <img flex="100" ng-src="{{selectedDataDisplayComponent.serviceLogo}}">
+      </div>
+      <div layout="column" layout-align="center center"flex="90" flex-xs="30">
+
+        <div class="nameFont">{{selectedDataDisplayComponent.serviceDetails.heading}}</div>
+        <div class="seconDivDataFont" ng-repeat='(tag,data) in selectedDataDisplayComponent.serviceDetails.description'>
+          {{data}}
+        </div>
+
+      </div>
+      <div layout="row" layout-xs="column" flex="100" flex-xs="30" layout-align="center center">
+        <div layout="column" layout-align="center center">
+          <div class="timeFont">{{selectedDataDisplayComponent.beginDateTime.startTime}}</div>
+          <div class="dateFont">{{selectedDataDisplayComponent.beginDateTime.startDate}}</div>
+
+          <div class="dataFont" ng-repeat='(tag,data) in selectedDataDisplayComponent.beginDateTime.description'>
+            {{data}}
+          </div>
+        </div>
+        <div>
+          <hr class="horizontal">
+        </div>
+        <div layout="column" layout-align="center center">
+          <div class="timeFont">{{selectedDataDisplayComponent.endDateTime.endTime}}</div>
+          <div class="dateFont">{{selectedDataDisplayComponent.endDateTime.endDate}}</div>
+          <div class="dataFont" ng-repeat='(tag,data) in selectedDataDisplayComponent.endDateTime.description'>
+            {{data}}
+          </div>
+        </div>
+      </div>
+      <div layout="column" layout-align="center center" flex="100" flex-xs="30">
+        <div class="priceFont">
+          {{selectedDataDisplayComponent.price.price}}
+        </div>
+        <div class="preference" ng-repeat="(label,value) in selectedDataDisplayComponent.extraDescription">
+          {{label}} : {{value}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <md-button flex="5" flex-offset="5" class="md-raised md-primary">Edit</md-button>
+  <md-button  flex="5" flex-offset="5" class="md-raised md-primary">Delete</md-button> -->
+
+</div>

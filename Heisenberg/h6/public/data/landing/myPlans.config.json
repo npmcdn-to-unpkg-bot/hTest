@@ -1,0 +1,8 @@
+{
+  "headerDisplayName": "My Current Plan",
+  "subHeadersDisplayName": {
+    "completed":"Completed",
+    "current": "Current",
+    "future": "Future"
+  }
+}

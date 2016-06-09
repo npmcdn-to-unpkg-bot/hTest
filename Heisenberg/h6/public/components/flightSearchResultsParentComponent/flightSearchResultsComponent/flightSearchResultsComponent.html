@@ -1,0 +1,18 @@
+<div class="container" id="flightContainer">
+  <div>
+    <md-card>ldfl</md-card>
+    <div layout='row'>
+      <div class='filter' flex='25' layout='column'>
+        <!-- <number-of-stops-filter></number-of-stops-filter> -->
+        <!-- <departure-time-filter></departure-time-filter> -->
+        <md-card ng-repeat='filter in flightSearchResults.filters'>
+          <md-card-content>
+            <custom-input-box type='{{filter.type}}' id='{{filter.id}}' label='{{filter.label}}' specific-attr='filter.options' reflect-custom-input="flightSearchResults.reflectValue(keyString,value, id)" bind-data="flightSearchResults.checkBoxInput.data" bind-data-key="checkBoxInput.data"></custom-input-box>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div layout-xs="column" class="results" layout='column' flex='75' flex-sm="100" flex-xs="100">
+        <flight-search-result ng-repeat='searchResult in flightSearchResults.searchResults' flight-search-result='searchResult' selected-filters='flightSearchResults.selectedFilters' ng-if='flightSearchResults.applyFilters(searchResult)'></flight-search-result>
+      </div>
+    </div>
+  </div>

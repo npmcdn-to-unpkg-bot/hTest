@@ -1,0 +1,30 @@
+<div id="outerDiv">
+<!--    <md-toolbar layout="row" class="navbar" style="position:fixed;">
+        <div id="left"><h2>K2</h2></div>
+        <div id="right">
+            <i class="material-icons">home</i>
+            <i class="material-icons">notifications</i>
+            <i class="material-icons">account_circle</i>
+        </div>
+    </md-toolbar>`
+  -->
+  <div id="content" flex="80">
+      <div layout="column">
+          <div ng-repeat="data in model.travelPlanData">
+             <div ng-repeat="(key,value) in data">
+               <div ng-if="key=='cityName'">
+                 <city-component value="value"></city-component>
+               </div>
+
+              <div ng-if="key=='childServices'">
+                <child-services-component value="value" get-mode-pref="model.getModePref(type)" get-seat-pref="model.getSeatPref(value)"></child-services-component>
+             </div>
+         </div>
+     </div>
+<div>
+  <md-button class="md-raised md-primary">Modify</md-button>
+  <md-button class="md-raised md-primary">Confirm</md-button>
+</div>
+</div><!--column layout end-->
+</div><!--content end-->
+</div>

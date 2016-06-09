@@ -1,0 +1,65 @@
+{
+  "status": "",
+  "childServices": {
+    "edge1mode1": {
+      "status": "",
+      "requested": {
+        "travelStartDate": "",
+        "mode": "flight",
+        "flight": {
+          "state": "",
+          "class": "",
+          "Nonstop": ""
+        },
+        "bus": {
+          "state": "",
+          "class": "",
+          "seatType": ""
+        },
+        "train": {
+          "state": "",
+          "class": ""
+        }
+      },
+      "final": {
+        "travelStartDate": "",
+        "mode": "",
+        "flight": {
+          "companyName": "",
+          "flightID": "",
+          "seatNumber": "",
+          "price": "",
+          "preferences": {
+            "class": "",
+            "Nonstop": "",
+            "meals": "",
+            "extra Baggage": ""
+          }
+        },
+        "bus": {
+          "companyName": "",
+          "busNumber": "",
+          "seatNumber": "",
+          "price": "",
+          "preferences": {
+            "class": "",
+            "seatType": ""
+          }
+        },
+        "train": {
+          "companyName": "",
+          "trainNumber": "",
+          "seatNumber": "",
+          "coachNumber": "",
+          "price": "",
+          "preferences": {
+            "class": ""
+          }
+        },
+        "travelStartTime": "",
+        "travelEndDate": "",
+        "travelEndTime": ""
+      }
+    }
+  }
+}

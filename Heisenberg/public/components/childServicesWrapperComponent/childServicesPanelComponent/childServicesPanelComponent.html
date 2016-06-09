@@ -1,0 +1,42 @@
+<md-card>
+  <md-card-title>
+    {{childServicesPanelComponentCtrl.serviceDisplayName}}
+  </md-card-title>
+  <div ng-repeat="(serviceId,serviceValue) in  childServicesPanelComponentCtrl.serviceData">
+    <div flex="20" flex-offset="5" flex-xs="80"  layout-padding  ng-repeat="(fieldId, fieldData) in childServicesPanelComponentCtrl.serviceFields">
+      <custom-input-box id="{{fieldId}}" specific-attr="fieldData.specificAttr"
+       type="{{fieldData.type}}" label="{{fieldData.displayName}}"
+       bind-data="childServicesPanelComponentCtrl.serviceValue[fieldId.id]"
+       bind-data-key="{{serviceId}}"
+        reflect-custom-input="childServicesPanelComponentCtrl.reflectValue(keyString,value,id)">
+      </custom-input-box>
+    </div>
+    <div  layout="row" layout-align="end center">
+      <ng-md-icon flex="40" flex-offset="10" icon="delete" size="45px" ng-click="childServicesPanelComponentCtrl.delete(serviceId)"  ></ng-md-icon>
+      <ng-md-icon  flex="40"  flex-offset="10" icon="add_circle" size="45px" ng-click="childServicesPanelComponentCtrl.add()"  ></ng-md-icon  >
+    </div>
+  </div>
+</md-card>
+
+<!-- Data is
+{{childServicesPanelComponentCtrl.nodeMasterData.services}} -->
+<!-- service is {{childServicesPanelComponentCtrl.service}} -->
+
+<!--
+<div ng-repeat="(key,value) in  childServicesPanelComponentCtrl.obj">
+  <md-divider layout-margin></md-divider>
+  <div layout="row"  layout-wrap  >
+    <div flex="20" flex-offset="5" flex-xs="80"  layout-padding  ng-repeat="(fieldId, fieldData) in childServicesPanelComponentCtrl.nodeMasterData.services[childServicesPanelComponentCtrl.service]">
+      <custom-input-box specific-attr="fieldData.specificAttr"
+       type="{{fieldData.type}}" label="{{fieldData.displayName}}"
+        bind-data="childServicesPanelComponentCtrl.selectedServ"
+        bind-data-key="selectedServices"
+        reflect-custom-input="childServicesPanelComponentCtrl.reflectValue(keyString,value)">
+      </custom-input-box>
+    </div>
+    <div  layout="row" layout-align="end center">
+      <ng-md-icon flex="40" flex-offset="10" icon="delete" size="45px" ng-click="deleteAccommodationItem($index)"  ></ng-md-icon>
+      <ng-md-icon  flex="40"  flex-offset="10" icon="add_circle" size="45px" ng-click="childServicesPanelComponentCtrl.add()"  ></ng-md-icon  >
+    </div>
+  </div>
+</div> -->

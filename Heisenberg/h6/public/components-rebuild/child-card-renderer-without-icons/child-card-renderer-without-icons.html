@@ -1,0 +1,13 @@
+
+<md-card>
+  <md-card-title>
+    {{childCardRendererWithoutIcons.cardHeading}}
+  </md-card-title>
+  <div ng-repeat="childFieldsData in childCardRendererWithoutIcons.childFieldsData">
+    <div>
+      <child-form-renderer fields-data="childFieldsData"
+      fields-meta-data="childCardRendererWithoutIcons.metaDataOfChildFields" ></child-form-renderer>
+    </div>
+    <md-divider layout-margin></md-divider>
+  </div>
+</md-card>

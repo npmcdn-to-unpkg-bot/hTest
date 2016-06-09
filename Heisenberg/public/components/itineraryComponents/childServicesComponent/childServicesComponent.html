@@ -1,0 +1,52 @@
+<div ng-repeat="(stayOrLocalTravelOrBooking,associatedValue) in childServicesComponent.value">                               <!-- node1s1:value,node1s2:value,node1t1:value-->
+
+    <div ng-if="stayOrLocalTravelOrBooking=='stay'">
+      <div ng-repeat="stayObject in associatedValue">
+        <div ng-repeat="(requestedOrSelected,value) in stayObject">
+          <div ng-if="requestedOrSelected=='selected'">
+             <display-component logo="value.image" name="value.name" room-type="value.roomType" mode-value="stayOrLocalTravelOrBooking" start-time="value.checkinTime" start-date="value.checkinDate" end-time="value.checkoutTime" end-date="value.checkoutDate" location="value.location"  price="value.price"></display-component>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-if="stayOrLocalTravelOrBooking=='localTravel'">
+      <div ng-repeat="localTravelObject in associatedValue">
+        <div ng-repeat="(requestedOrSelected,localTravelValue) in localTravelObject">
+          <div ng-if="requestedOrSelected=='selected'">
+            <div ng-if="localTravelValue.type=='cab'">
+              <display-component mode-or-seat-key-object="localTravelValue.cab" name="localTravelValue.cab.companyName" logo="localTravelValue.cab.image" mode-value="localTravelValue.type" mode-key="childServicesComponent.modePref(type)" start-time="localTravelValue.pickupTime"  start-date="localTravelValue.pickupDate"  source="localTravelValue.source" end-time="localTravelValue.dropTime" end-date="localTravelValue.dropDate" destination="localTravelValue.destination" price="localTravelValue.cab.estimatedPrice"></display-component>
+            </div>
+            <div ng-if="localTravelValue.type=='localBus'">
+              <display-component mode-or-seat-key-object="localTravelValue.localBus" name="localTravelValue.localBus.companyName"logo="localTravelValue.localBus.image" mode-value="localTravelValue.type" mode-key="childServicesComponent.modePref(type)" start-time="localTravelValue.pickupTime"  start-date="localTravelValue.pickupDate"  source="localTravelValue.source" end-time="localTravelValue.dropTime" end-date="localTravelValue.dropDate" destination="localTravelValue.destination" price="localTravelValue.localBus.price"></display-component>
+            </div>
+          </div>
+        </div>
+       </div>
+    </div>
+
+    <div ng-if="stayOrLocalTravelOrBooking=='flight'">
+        <div ng-repeat="(requestedOrSelected,bookingValue) in associatedValue">
+          <div ng-if="requestedOrSelected=='selected'">
+            <display-component mode-or-seat-key-object="bookingValue" name="bookingValue.companyName" logo="bookingValue.image" mode-value="'flight'" mode-key="childServicesComponent.modePref(type)" seat-key="childServicesComponent.seatPref(value)" start-time="bookingValue.travelStartTime" source="bookingValue.sourceAirport" start-date="bookingValue.travelStartDate" end-time="bookingValue.travelEndTime" end-date="bookingValue.travelEndDate" destination="bookingValue.destinationAirport" price="bookingValue.price" seat-preferences="childServicesComponent.getSeatPref()"></display-component>
+          </div>
+        </div>
+    </div>
+
+    <div ng-if="stayOrLocalTravelOrBooking=='train'">
+        <div ng-repeat="(requestedOrSelected,bookingValue) in associatedValue">
+          <div ng-if="requestedOrSelected=='selected'">
+              <display-component mode-or-seat-key-object="bookingValue" name="bookingValue.companyName" logo="bookingValue.image" mode-value="'train'" mode-key="childServicesComponent.modePref(type)" seat-key="childServicesComponent.seatPref(value)" start-time="bookingValue.travelStartTime" source="bookingValue.sourceStation" start-date="bookingValue.travelStartDate" end-time="bookingValue.travelEndTime" end-date="bookingValue.travelEndDate" destination="bookingValue.destinationStation" price="bookingValue.price" seat-preferences="childServicesComponent.getSeatPref()"></display-component>
+          </div>
+        </div>
+    </div>
+
+    <div ng-if="stayOrLocalTravelOrBooking=='bus'">
+        <div ng-repeat="(requestedOrSelected,bookingValue) in associatedValue">
+          <div ng-if="requestedOrSelected=='selected'">
+              <display-component mode-or-seat-key-object="bookingValue" name="bookingValue.companyName" logo="bookingValue.image" mode-value="'bus'" mode-key="childServicesComponent.modePref(type)" seat-key="childServicesComponent.seatPref(value)" start-time="bookingValue.travelStartTime" source="bookingValue.sourceBusStop" start-date="bookingValue.travelStartDate" end-time="bookingValue.travelEndTime" end-date="bookingValue.travelEndDate" destination="bookingValue.destinationBusStop" price="bookingValue.price" seat-preferences="childServicesComponent.getSeatPref()"></display-component>
+          </div>
+        </div>
+    </div>
+
+</div>

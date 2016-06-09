@@ -1,0 +1,114 @@
+{
+  "servicesDetails":
+  {
+    "coExistServices": {
+      "visaonarrival":{
+        "icons": "flight_takeoff",
+        "displayName": "Visa on Arrival"
+      },
+      "forex":{
+        "icons":"monetization_on",
+        "displayName": "Foreign Exchange"
+        }
+    },
+    "mutuallyExclusive": {
+      "mode":{
+        "displayName":"Mode of travel",
+        "servicesDetails": {
+          "flight": {
+            "icons": "",
+            "displayName": "Flight"
+          },
+          "train": {
+            "icons":"",
+            "displayName":"Train"
+          },
+          "bus":{
+            "icons":"",
+            "displayName":"Bus"
+          }
+        }
+      }
+    }
+  },
+  "essential": {
+    "noDependencyData": {
+      "travelStartDate": {
+        "mandatory": "true",
+        "displayName": "Travel Start Date",
+        "id": "travelStartDate",
+        "type": "date"
+      }
+    },
+    "modesToSelectTheServices": {
+      "mode": {
+        "mandatory": true,
+        "displayName": "Select the mode",
+        "id": "mode",
+        "type": "singleSelect",
+        "specificAttr": {
+          "domainList": ["flight", "bus", "train"]
+        },
+        "javascriptDataType": "String"
+      },
+      "extraAddOnsServices": {
+        "mandatory": false,
+        "displayName": "Extra Add-on Services",
+        "id": "extraAddOnsServices",
+        "type": "multiSelect",
+        "specificAttr": {
+          "domainList": ["visaOnArrival", "forex"]
+        },
+        "javascriptDataType": "Array"
+      }
+    }
+  },
+  "services": {
+    "flight": {
+      "travelStartDate": {
+        "mandatory": true,
+        "displayName": "Travel Start Date",
+        "id": "travelStartDate",
+        "type": "date",
+        "data-reference": "essential.travelStartDate"
+      },
+      "class": {
+        "mandatory": true,
+        "displayName": "Class",
+        "id": "class",
+        "type": "singleSelect",
+        "specificAttr": {
+          "domainList": ["Bussiness", "Economy"]
+        }
+
+      },
+      "numberOfHops": {
+        "mandatory": true,
+        "displayName": "Number of Hops",
+        "id": "numberOfHops",
+        "type": "slider",
+        "specificAttr": {
+          "min": 0,
+          "max": 15
+        }
+      },
+      "departureTime": {
+        "mandatory": false,
+        "displayName": "Departure Time",
+        "id": "departureTime",
+        "type": "time"
+      },
+      "airlines": {
+        "mandatory": false,
+        "displayName": "Airlines",
+        "id": "airlines",
+        "type": "singleSelect",
+        "specificAttr": {
+          "domainList": ["Air Asia", "Air Costa", "Jet"]
+        }
+
+      }
+    }
+  }
+
+}

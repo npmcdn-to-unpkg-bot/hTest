@@ -1,0 +1,147 @@
+[
+{
+	"name": "Lemon Tree Hotel",
+	"location": "Pune",
+	"rating": "5 star",
+	"amenities":[{
+					"iconCode":"wifi",
+					"name": "Wifi"
+				},
+				{
+					"iconCode":"free_breakfast",
+					"name": "Breakfast"
+				},
+				{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": 5400,
+	"imageUrl": "public/assets/images/1.jpg"
+},
+{
+	"name": "St. Laurn Business Hotel",
+	"location": "Delhi",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": 1700,
+	"imageUrl": "public/assets/images/2.jpg"
+},
+{
+	"name": "The O Hotel",
+	"location": "Bengaluru",
+	"rating": "3 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": 3000,
+	"imageUrl": "public/assets/images/3.jpg"
+},
+{
+	"name": "Aurora",
+	"location": "Pune",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": 4300,
+	"imageUrl": "public/assets/images/4.jpg"
+},
+{
+	"name": "Hotel Sagar Plaza",
+	"location": "Chennai",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": 2500,
+	"imageUrl": "public/assets/images/5.jpg"
+},
+{
+	"name": "The Centurian Hotel",
+	"location": "Delhi",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": 4700,
+	"imageUrl": "public/assets/images/6.jpg"
+},
+{
+	"name": "The E Square",
+	"location": "Delhi",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": 3500,
+	"imageUrl": "public/assets/images/7.jpg"
+},
+{
+	"name": "Golden Emarald Hotel",
+	"location": "Bengaluru",
+	"rating": "5 star",
+	"amenities":[{
+		"iconCode":"wifi",
+		"name": "Wifi"
+		},
+		{
+			"iconCode":"free_breakfast",
+			"name": "Breakfast"
+			},{
+					"iconCode": "time_to_leave",
+					"name": "Parking"
+				}],
+	"price": 7000,
+	"imageUrl": "public/assets/images/8.jpg"
+}
+]

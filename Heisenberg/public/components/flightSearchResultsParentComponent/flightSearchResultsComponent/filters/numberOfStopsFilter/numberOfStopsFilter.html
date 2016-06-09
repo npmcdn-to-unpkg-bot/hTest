@@ -1,0 +1,8 @@
+<md-card layout='column' layout-align='space-between none'>
+  <h4>No of Stops</h4>
+  <div layout='row' layout-align='space-between center'>
+    <div ng-repeat="i in [1, 2, 3] track by $index">
+      <button-block href="#"><span>{{i-1}}</span><br><span>Stops</span></button-block>
+    </div>
+  </div>
+</md-card>

@@ -1,0 +1,11 @@
+<md-card>
+  <md-card-title>
+    {{childRenderer.cardHeading}}
+  </md-card-title>
+  <child-form-router></child-form-router>
+  <div ng-repeat="childFieldsData in childRenderer.arrayOfChildFieldsData">
+    <child-form-renderer index="$index" fields-data="childFieldsData" fields-meta-data="childRenderer.metaDataOfChildFields" on-add="childRenderer.onAdd()" on-delete="childRenderer.onDelete(index)"></child-form-renderer>
+    <md-divider layout-margin></md-divider>
+  </div>
+</md-card>
+b

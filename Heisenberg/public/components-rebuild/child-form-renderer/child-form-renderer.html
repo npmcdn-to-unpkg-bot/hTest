@@ -1,0 +1,18 @@
+<!-- <br>
+Child form renderer
+<br>
+{{childFormRenderer.fieldsMetaData}}
+<br>
+{{childFormRenderer.fieldsData}} -->
+
+<div ng-init="childFormRenderer.dataInitializer()">
+
+
+  <div layout="row" layout-wrap>
+    <div ng-repeat="(fieldMetaDataId,fieldMetaDataValue) in childFormRenderer.fieldsMetaData" flex="{{childFormRenderer.flex}}" flex-offset="{{childFormRenderer.flexOffset}}" flex-xs="80">
+
+        <custom-input-box type="{{fieldMetaDataValue.type}}" label="{{fieldMetaDataValue.displayName}}" bind-data="childFormRenderer.fieldsData[fieldMetaDataId]"
+        id="{{fieldMetaDataId}}" specific-attr="fieldMetaDataValue.specificAttr" bind-data-key="{{fieldMetaDataId}}" reflect-custom-input="childFormRenderer.onReflect(keyString,value,id)"></custom-input-box>
+    </div>
+  </div>
+</div>

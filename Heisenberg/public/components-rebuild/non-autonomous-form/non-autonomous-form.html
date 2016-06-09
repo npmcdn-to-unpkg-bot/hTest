@@ -1,0 +1,13 @@
+I am in non-autonomous-form
+<br>
+{{nonAutonomousForm.fieldsData}}
+<br>
+<div layout="row" layout-wrap>
+  <div ng-repeat="(fieldMetaDataId,fieldMetaDataValue) in nonAutonomousForm.fieldsMetaData" flex="{{nonAutonomousForm.flex}}" flex-offset="{{nonAutonomousForm.flexOffset}}" flex-xs="80">
+    Inside repeat
+    {{fieldMetaDataId}}
+    {{nonAutonomousForm.fieldsData[fieldMetaDataId]}}
+      <custom-input-box type="{{fieldMetaDataValue.type}}" label="{{fieldMetaDataValue.displayName}}" bind-data="nonAutonomousForm.fieldsData[fieldMetaDataId]"
+      id="{{fieldMetaDataId}}" specific-attr="fieldMetaDataValue.specificAttr" bind-data-key="{{fieldMetaDataId}}" reflect-custom-input="nonAutonomousForm.onReflect(keyString,value,id)"></custom-input-box>
+  </div>
+</div>

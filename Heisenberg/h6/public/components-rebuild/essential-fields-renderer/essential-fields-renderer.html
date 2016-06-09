@@ -1,0 +1,13 @@
+<md-card>
+  <md-card-title>
+    Essential Fields
+  </md-card-title>
+  <div layout="row"  >
+    <child-form-renderer flex-offset="10" flex="20" fields-meta-data="essentialFieldsRenderer.metaDataOfEssentialFields.noDependencyData" fields-data="essentialFieldsRenderer.essentialFieldsData" ></child-form-renderer>
+
+<!-- Before Meta datadisplay
+{{essentialFieldsRenderer.metaDataOfModesToSelectTheServices}}
+Before non autonomuus -->
+    <non-autonomous-form flex-offset="5" flex="20" fields-meta-data="essentialFieldsRenderer.metaDataOfEssentialFields.modesToSelectTheServices" fields-data="essentialFieldsRenderer.essentialFieldsData" reflect-form-fields="essentialFieldsRenderer.reflectModes(keyString, value, id)"></non-autonomous-form>
+</div>
+</md-card>

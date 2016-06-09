@@ -1,0 +1,16 @@
+{
+"completed":
+  {
+  "plan": ["Travel from Chennai to Banglore","Gateway Hotel in Electronicity","Travel from Newyork to Bali","Lemon Tree hotel in Chennai"
+  ]},
+
+  "current":
+   {
+     "plan": ["Travel from Chennai to Banglore","Travel from Delhi to Banglore"]
+
+   },
+  "future":
+  {
+    "plan":["Travel from Chennai to Banglore","Travel from Hyderabad to Banglore"]
+  }
+}

@@ -1,0 +1,14 @@
+
+<span ng-click="node.show_autocomplete()">{{node.travelelement.essential.noDependencyData.location||'edit'}}</span>
+<div ng-show="node.edit==true">
+  <custom-input-box class="node-md-action-input"  type="{{node.locationMetaData.type}}" label="{{node.locationMetaData.displayName}}" bind-data="node.travelelement[node.locationMetaData.id]"
+  id="{{node.locationMetaData.id}}" specific-attr="node.locationMetaData.specificAttr"  reflect-custom-input="node.onReflect(keyString,value,id)"></custom-input-box>
+</div>
+<div class="node" click-outside="node.closeThis(value)" outside-if-not="nodeid,node-md-main-action">
+  <div class="node-md" ng-click="node.sendDetailsOfElement(node.currentnode)">
+    {{node.travelelement.essential.noDependencyData.location|limitTo:3|uppercase}}
+  </div>
+  <div ng-repeat="(key,value) in node.locationchildservices">
+    <i class="material-icons" ng-click="node.sendDetailsOfChild(node.currentnode,key)">{{value.icons}}</i>
+  </div>
+</div>

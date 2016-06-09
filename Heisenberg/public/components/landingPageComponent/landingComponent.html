@@ -1,0 +1,16 @@
+
+    <div layout="row" flex="100">
+    <div layout="column" flex-xs="100" flex-gt-xs="65">
+        <my-current-plan current="current" completed="completed" future="future"></my-current-plan>
+        <my-worklist messages="messages"></my-worklist>
+    </div>
+    <div flex-xs="100" flex-gt-xs="35" layout="column">
+      <my-favourite fav=fav(value) locality="locality"></my-favourite>
+      <my-alert  alertdata="alertdata"></my-alert>
+      <my-calendar></my-calendar>
+    </div>
+
+  </div>
+  <div class="main-button-fixed">
+    <main-buttons></main-buttons>
+  </div>

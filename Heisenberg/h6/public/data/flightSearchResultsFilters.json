@@ -1,0 +1,52 @@
+[
+  {
+    "id":"price",
+    "type":"rangeSlider",
+    "label":"PRICE:",
+    "options": {
+            "domainList":{
+              "minValue": 2500,
+                          "maxValue": 9500,
+                          "options":{
+                            "id": "price",
+                            "floor": 2000,
+                            "ceil": 10000,
+                            "step": 1,
+                            "noSwitching": true
+                        }
+                      }
+        }
+  },
+    {
+  		"id": "depTime",
+  		"type": "checkBox",
+  		"label": "DEPARTURE TIME:",
+  		"options": {
+  			"domainList": ["00-06", "06-12", "12-18", "18-24"]
+  		}
+    },
+  {
+		"id": "stops",
+		"type": "checkBox",
+		"label": "STOPS:",
+		"options": {
+			"domainList":[0,1,2]
+		}
+  },
+  {
+		"id": "Airlines",
+		"type": "checkBox",
+		"label": "AIRLINES:",
+		"options": {
+			"domainList": ["AIR INDIA", "INDIGO", "JET AIRWAYS", "SPICEJET", "TRUJET", "VISTARA"]
+		}
+  },
+  {
+		"id": "FareType",
+		"type": "checkBox",
+		"label": "FARE TYPE:",
+		"options": {
+			"domainList": ["REFUNDABLE", "NON REFUNDABLE"]
+		}
+  }
+]

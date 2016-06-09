@@ -1,0 +1,126 @@
+.view-container {
+  margin-top: 320px;  
+}
+
+.prev-next-fixed {
+  position: fixed;
+  margin-top: 250px;
+  z-index: 1001;
+  width: 100%;
+}
+.travel-plan-fixed {
+  position: fixed;
+  z-index: 1000;
+  background: white;
+  width: 100%;
+  margin-top: 45px;
+}
+.slide {
+    -webkit-transition: -webkit-transform .7s ease-in-out;
+    -moz-transition: -moz-transform .7s ease-in-out;
+    -o-transition: -o-transform .7s ease-in-out;
+    transition: transform .7s ease-in-out;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.slide.ng-enter {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.slide.ng-enter.ng-enter-active, .slide.ng-leave {
+    position: absolute;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.slide.ng-leave.ng-leave-active {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+
+#sidebar md-grid-list{
+  margin: 10px 0 0 0;
+  font-weight:bold;
+}
+#sidebar md-card{
+  margin-bottom:10px;
+}
+#sidebar md-checkbox{
+  margin:0 5px 10px 15px;
+}
+#mainbar .det_header{
+  margin:10px 0 10px 10px;
+  padding: 5px;
+  font-weight:bold;
+}
+#mainbar .det_header .sortIc{
+  color: blue;
+}
+#mainbar md-card{
+  margin-bottom: 10px;
+}
+#mainbar md-card .det_cards{
+  font-size:16px;
+  text-align:center;
+}
+.det_cards .spann{
+  font-size:12px;
+}
+md-card-title{
+  font-size: 20px;
+}
+.content_div{
+  background-color: #e3e3e3;
+  margin:auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#showMore{
+  display: block;
+  margin-left: 50%;
+}
+#showMore a{
+  cursor: pointer;
+  background-color: white;
+  color: blue;
+}
+#moreDetails{
+  border:1px ridge black;
+  padding: 10px;
+}
+
+#moreDetails .value{
+  font-size: 18px;
+}
+#selectButton{
+  display: block;
+}
+#selectButton button{
+  border: none;
+  margin-bottom: 2px;
+  background-color: blue;
+  color: white;
+}
+@media(max-width : 780px) {
+  #mainbar md-card .det_cards{
+    font-size: 12px;
+  }
+  #mainbar .det_header{
+    font-size: 8px;
+  }
+  .det_cards .spann{
+    font-size:8px;
+  }
+  #selectButton{
+    font-size: 10px;
+  }
+  #moreDetails{
+    font-size: 10px;
+  }
+  #moreDetails .value{
+    font-size: 12px;
+  }
+
+}

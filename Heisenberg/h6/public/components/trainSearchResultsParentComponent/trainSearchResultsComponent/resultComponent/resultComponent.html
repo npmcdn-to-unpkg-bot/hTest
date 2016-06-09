@@ -1,0 +1,45 @@
+
+<md-grid-list class="det_cards" md-cols="7"  md-row-height="2:1">
+  <md-grid-tile>
+    <div>{{resultComponent.one.trainNo}}<br>
+    <span class="spann">{{resultComponent.one.Name}}</span>
+    </div>
+  </md-grid-tile>
+  <md-grid-tile>{{resultComponent.one.departure_time}}</md-grid-tile>
+  <md-grid-tile>{{resultComponent.one.arrival_time}}</md-grid-tile>
+  <md-grid-tile>{{resultComponent.one.duration}}</md-grid-tile>
+  <md-grid-tile >{{resultComponent.one.Availability}}</md-grid-tile>
+  <md-grid-tile>Rs.{{resultComponent.one.price}}</md-grid-tile>
+  <md-grid-tile>
+      <div id="selectButton">
+        <button>Select</button>
+      </div>
+  </md-grid-tile>
+</md-grid-list>
+<div id="showMore">
+  <a ng-show="resultComponent.showbutton" ng-click="resultComponent.showbutton=false;">ShowDetails</a>
+  <a ng-show="!resultComponent.showbutton" ng-click="resultComponent.showbutton=true;">HideDetails
+  </a>
+</div>
+<div ng-show="!resultComponent.showbutton" id="moreDetails">
+  <div layout="row">
+  <div flex="50">
+
+    <font class="value">{{resultComponent.one.trainNo}}</font>
+  </div>
+  <div flex="50">
+
+    <font class="value">{{resultComponent.one.Name}}</font>
+  </div>
+</div>
+<div layout="row">
+  <div flex="50">
+
+    <font class="value">{{resultComponent.one.departure_station}}</font>
+  </div>
+  <div flex="50">
+
+    <font class="value">{{resultComponent.one.arrival_station}}</font>
+  </div>
+</div>
+</div>

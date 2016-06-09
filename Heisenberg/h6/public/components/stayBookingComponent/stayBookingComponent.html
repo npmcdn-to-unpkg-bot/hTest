@@ -1,0 +1,97 @@
+<!-- <child-selected-data-renderer-component>
+</child-selected-data-renderer-component> -->
+
+
+
+<stay-selected-data-renderer selected-meta-data="stayBookingCtrl.selectedMetaData">
+</stay-selected-data-renderer>
+
+<local-travel-selected-data-renderer selected-meta-data="stayBookingCtrl.selectedMetaDataLocalTravel">
+</local-travel-selected-data-renderer>
+
+
+<local-travel-selected-data-renderer selected-meta-data="stayBookingCtrl.selectedCabData">
+</local-travel-selected-data-renderer>
+
+
+
+<flight-selected-data-renderer selected-meta-data="stayBookingCtrl.selectedFlight">
+</flight-selected-data-renderer>
+
+
+  <!-- <child-selected-data-renderer-component value="stayBookingCtrl.value"
+  get-mode-pref="stayBookingCtrl.getModePref('stay')"
+  get-seat-pref="stayBookingCtrl.getSeatPref('stay')"></child-selected-data-renderer-component>
+
+-->
+
+
+
+<!--Testing child-form-renderer rebuild -->
+<!-- <child-form-renderer index="1" fields-data="stayBookingCtrl.fieldsData" fields-meta-data="stayBookingCtrl.fieldsMetaData" on-add="stayBookingCtrl.onAdd()" on-delete="stayBookingCtrl.onDelete(index)"></child-form-renderer> -->
+<!-- {{stayBookingCtrl.fieldsData}}
+chidrenFieldsData: "<",
+childrenFieldsMetaData: "<",
+selectedChildren: "<" -->
+<!--
+I am in stay booking
+{{stayBookingCtrl.fieldsData}}
+{{stayBookingCtrl.metaDataEssentialFieldsData}}
+staybooking comment end -->
+
+<!-- <essential-fields-renderer essential-fields-data="stayBookingCtrl.essentialFieldsData" meta-data-of-essential-fields="stayBookingCtrl.metaDataEssentialFieldsData" reflect-selected-children="stayBookingCtrl.reflectSelectedChildren(arrayOfSelectedServices)">
+</essential-fields-renderer>
+{{stayBookingCtrl.fieldsData}}
+<children-renderer chidren-fields-data="stayBookingCtrl.fieldsData" children-fields-meta-data="stayBookingCtrl.fieldsMetaData" selected-children="stayBookingCtrl.selectedChildren" children-labels ="stayBookingCtrl.childrenLabels"></children-renderer> -->
+<!-- {{stayBookingCtrl.value}} -->
+<!-- <child-selected-data-renderer-component value="stayBookingCtrl.value"
+get-mode-pref="stayBookingCtrl.getModePref('stay')"
+get-seat-pref="stayBookingCtrl.getSeatPref('stay')"></child-selected-data-renderer-component> -->
+<!-- <child-services-component value="value" get-mode-pref="model.getModePref(type)" get-seat-pref="model.getSeatPref(value)"></child-services-component> -->
+
+<!--<travel-plan></travel-plan>-->
+
+<!--<travel-plan-parent-component></travel-plan-parent-component>-->
+<!-- <div layout="row">
+<custom-input-box  flex="20" flex-offset="5" reflect-custom-input="stayBookingCtrl.reflectValue(keyString,value)" bind-data="stayBookingCtrl.firstName" bind-data-key="firstName" type='text' label="{{stayBookingCtrl.label}}" specific-attr='stayBookingCtrl.specificAttr'>
+</custom-input-box>
+
+<div flex="20" flex-offset="5">
+MultiSelect Outside
+{{stayBookingCtrl.multiSelectData.label}}
+{{stayBookingCtrl.selectedmultiSelectedData}}
+<br>
+<custom-input-box   reflect-custom-input="stayBookingCtrl.reflectValue(keyString,value)" bind-data="stayBookingCtrl.selectedmultiSelectedData" bind-data-key="selectedmultiSelectedData" type='{{stayBookingCtrl.multiSelectData.type}}' label="{{stayBookingCtrl.multiSelectData.label}}" specific-attr='stayBookingCtrl.multiSelectData.specificAttr'>
+</custom-input-box>
+</div>
+
+<div flex="20" flex-offset="5">
+Single Select Outside
+{{stayBookingCtrl.singleSelectData.label}}
+{{stayBookingCtrl.selectedsingleSelectedData}}
+
+<custom-input-box  flex="20" flex-offset="5" reflect-custom-input="stayBookingCtrl.reflectValue(keyString,value)" bind-data="stayBookingCtrl.selectedsingleSelectedData" bind-data-key="selectedsingleSelectedData" type='{{stayBookingCtrl.singleSelectData.type}}' label="{{stayBookingCtrl.singleSelectData.label}}" specific-attr='stayBookingCtrl.singleSelectData.specificAttr'>
+</custom-input-box>
+</div>
+
+</div><! end of row -->
+
+<!-- <md-card layout="row" layout-wrap>
+<div flex="20" flex-offset="5" flex-xs="80" ng-repeat='(fieldName, fieldParameters) in stayBookingCtrl.nodeMaster.services.stay'>
+
+<div ng-if="fieldParameters.type==autoComplete">
+<custom-input-box   reflect-custom-input="stayBookingCtrl.reflectValue(keyString,value)"
+bind-data="stayBookingCtrl.selectedsingleSelectedData"
+bind-data-key="selectedsingleSelectedData" type='{{fieldParameters.type}}'
+label="{{fieldParameters.displayName}}" specific-attr='stayBookingCtrl.autoCompleteData.specificAttr'>
+</custom-input-box>
+</div>
+
+{{fieldParameters.displayName}}
+{{stayBookingCtrl.selectedsingleSelectedData}}
+
+<custom-input-box   reflect-custom-input="stayBookingCtrl.reflectValue(keyString,value)" bind-data="stayBookingCtrl.selectedsingleSelectedData" bind-data-key="selectedsingleSelectedData" type='{{fieldParameters.type}}' label="{{fieldParameters.displayName}}" specific-attr='fieldParameters.specificAttr'>
+</custom-input-box>
+
+</div>
+</md-card> -->

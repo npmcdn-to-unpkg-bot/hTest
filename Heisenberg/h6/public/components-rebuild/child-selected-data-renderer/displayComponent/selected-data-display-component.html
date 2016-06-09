@@ -1,0 +1,50 @@
+<div layout="row" layout-align="center center">
+    <!-- <div id="box">
+        <div id="line"></div>
+        <i ng-if="itinerary.modeValue=='flight'" class="material-icons itineraryIcon">flight</i>
+        <i ng-if="itinerary.modeValue=='train'" class="material-icons itineraryIcon">train</i>
+        <i ng-if="itinerary.modeValue=='bus'" class="material-icons itineraryIcon">directions_bus</i>
+        <i ng-if="itinerary.modeValue=='localBus'" class="material-icons itineraryIcon">local_taxi</i>
+        <i ng-if="itinerary.modeValue=='cab'" class="material-icons itineraryIcon">local_taxi</i>
+        <i ng-if="itinerary.modeValue=='stay'" class="material-icons itineraryIcon">hotel</i>
+        <div id="line"></div>
+    </div> -->
+    <md-card  flex="80" flex-offset="5" flex-xs="70">
+        <md-card-content layout="row" layout-xs="column">
+            <div flex="30" flex-xs="70">
+                <img flex="100" ng-src="{{itinerary.logo}}">
+            </div>
+            <div layout="column" flex="90" flex-xs="30">
+                <div class="nameFont">{{itinerary.name}}</div>
+                <div class="seconDivDataFont" ng-repeat='data in itinerary.modeKeyArray'>
+                     {{itinerary.modeOrSeatKeyObject[data]}}
+                </div>
+                <div class="seconDivDataFont">{{itinerary.roomType}}</div>
+                <div class="seconDivDataFont">{{itinerary.location}}</div>
+            </div>
+            <div layout="row" layout-xs="column" flex="100" flex-xs="30" layout-align="center center">
+                <div layout="column" layout-align="center center">
+                    <div class="timeFont">{{itinerary.startTime}}</div>
+                    <div class="dateFont">{{itinerary.startDate}}</div>
+                    <div class="dataFont">{{itinerary.source}}</div>
+                </div>
+                <div>
+                    <hr class="horizontal">
+                </div>
+                <div layout="column" layout-align="center center">
+                    <div class="timeFont">{{itinerary.endTime}}</div>
+                    <div class="dateFont">{{itinerary.endDate}}</div>
+                    <div class="dataFont">{{itinerary.destination}}</div>
+                </div>
+            </div>
+            <div layout="column" flex="100" flex-xs="30">
+                  <div class="priceFont">
+                      {{itinerary.price}}
+                  </div>
+                  <div class="preference" ng-repeat="seatKey in itinerary.seatKeyArray">
+                      {{seatKey}} : {{itinerary.modeOrSeatKeyObject.preferences[seatKey]}}
+                  </div>
+            </div>
+        </md-card-content>
+    </md-card>
+</div>

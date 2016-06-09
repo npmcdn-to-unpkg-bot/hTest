@@ -1,0 +1,42 @@
+  <div class="container">
+    <div>
+      <div layout='row'>
+        <div class='filter' flex='25' layout='column'>
+          <md-card layout="column" layout-align="space-between center">
+            <h4 class="filter1-text" ng-model="fliters">{{filters[0].name}}</h4>
+            <!-- <md-slider  class="filter1-slider" class="md-primary" md-discrete
+              step="{{filters[0].slider.steps}}" min="{{filters[0].slider.min}}"
+              max="{{filters[0].slider.max}}" aria-label='Slider'>
+            </md-slider> -->
+            <md-slider flex ng-model="color.blue" min="{{filters[0].slider.min}}"
+            max="{{filters[0].slider.max}}" aria-label="blue"
+            class="md-primary">
+            </md-slider>
+          </md-card>
+          <md-card layout="column" layout-align="space-between center" ng-repeat="filter in filters" ng-if="$index>0">
+            <div><h4 class="filter2-text">{{filter.name}}</h4></div>
+            <div layout="column" layout-align="center start">
+            <md-checkbox layout="column" layout-align="center center"ng-repeat="fields in filter.options" class="md-primary" class='checkbox'>
+              {{fields}}
+            </md-checkbox>
+          </div>
+          </md-card>
+        </div>
+        <div layout-xs="column" class="results" layout='column' flex='75' flex-sm="100" flex-xs="100">
+          <md-card  flex-xs="50" ng-model="flightSearchResults" ng-repeat="flightSearchResult in flightSearchResults">
+            <div layout="row"  layout-align="space-around center" layout-xs="column">
+              <div>
+                <img  class="img" ng-src="public/assets/images/{{flightSearchResult.imagePath}}" alt="{{flightSearchResult.imagePath}}">
+              </div>
+              <div>{{flightSearchResult.arrivalTime}}</div>
+              <div>{{flightSearchResult.departureTime}}</div>
+              <div>{{flightSearchResult.duration}}</div>
+              <div>{{flightSearchResult.price}}</div>
+              <div layout="row" layout-align="center center">
+                <button class="button md-raised md-primary md-button md-ink-ripple" ng-click="selectFlight('SpiceJet')" type="button" aria-label="Select"><span class="ng-scope">Select</span><div class="md-ripple-container"></div></button>
+              </div>
+            </div>
+          </md-card>
+        </div>
+      </div>
+    </div>

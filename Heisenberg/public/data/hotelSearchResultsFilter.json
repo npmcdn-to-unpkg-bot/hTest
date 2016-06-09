@@ -1,0 +1,52 @@
+[
+	{
+		"id":"price",
+		"type":"rangeSlider",
+		"label":"Price:",
+		"options": {
+			          "floor": 2000,
+			        	"ceil": 10000,
+			        	"step": 1,
+			        	"noSwitching": true,
+								"endPointsTranslate": {
+									"prefix": "",
+									"postfix": ""
+								},
+								"leftSliderHandleTranslate": {
+									"prefix": "",
+									"postfix": ""
+								},
+
+								"rightSliderHandleTranslate": {
+									"prefix": "",
+									"postfix": ""
+								}
+        }
+	},
+	{
+		"id": "rating",
+		"type": "checkBox",
+		"label": "Ratings:",
+		"options": {
+			"domainList": ["1 star", "2 star", "3 star", "4 star", "5 star"]
+		}
+	},
+
+	{
+		"id": "location",
+		"type": "checkBox",
+		"label": "Location:",
+		"options": {
+			"domainList": ["Pune", "Delhi", "Chennai", "Bengaluru", "Gurgaon"]
+		}
+	},
+
+	{
+		"id": "amenities",
+		"type": "checkBox",
+		"label": "Amenities:",
+		"options": {
+			"domainList": ["Wifi", "Breakfast", "Parking", "Swimming Pool", "Gymnasium"]
+		}
+	}
+]

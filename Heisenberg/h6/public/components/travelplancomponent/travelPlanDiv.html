@@ -1,0 +1,31 @@
+<div class="mainTravelDiv md-whiteframe-2dp">
+    <h2 layout="row" layout-padding layout-align="center center">
+        <div flex="auto" class="text-left">Plan Your Journey</div>
+    </h2>
+    <div class="main_component" layout-align="center" class="comp_details">
+        <div class=" margin-node">
+            <div class=" line">
+
+                <div ng-repeat="travelelement in plan.travelplanobject" class="node-add-action">
+
+                    <div ng-if="travelelement.type == plan.nodetype">
+                        <node-component travelelement="travelelement"  locationchildservices="plan.locationchildservices" currentnode="$index" currentnodeedgetravel="plan.currentnodeedgetravel(clicked)"></node-component>
+
+                    </div>
+                    <div ng-if="travelelement.type == plan.edgetype">
+                        <edge-component travelelement="travelelement" transitchildservices="plan.transitchildservices" currentedge="$index" currentnodeedgetravel="plan.currentnodeedgetravel(clicked)"></edge-component>
+
+                    </div>
+
+                </div>
+                <div class=" node-add node" ng-show="plan.travelplanobject.length >=3">
+                    <div class=" glyphicon glyphicon-plus" ng-click="plan.addNode()"></div>
+                </div>
+                <div class=" node-add node" ng-show="plan.travelplanobject.length >=5">
+                    <div class="glyphicon glyphicon-minus" ng-click="plan.subNode()"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

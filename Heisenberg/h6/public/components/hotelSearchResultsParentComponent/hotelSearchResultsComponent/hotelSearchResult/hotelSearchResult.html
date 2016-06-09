@@ -1,0 +1,32 @@
+<md-card class='results-card' layout='row' layout-wrap>
+
+						<img flex='20' ng-src="{{hotelSearchResult.hotelSearchResult.imageUrl}}" alt="hotelSearchResult.hotelSearchResult.name" class='hotel-image'>
+						<md-card-content flex='55' layout='column' layout-align='space-around'>
+							<div>
+								<h4>{{hotelSearchResult.hotelSearchResult.name}}</h4>
+							</div>
+							<div>
+								{{hotelSearchResult.hotelSearchResult.location}}
+							</div>
+							<div layout='row' class='star-rating-wrapper'>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+								<i class="material-icons star-rating">star</i>
+							</div>
+							<div layout='row' class='facilities-wrapper'>
+								<div ng-repeat='amenity in hotelSearchResult.hotelSearchResult.amenities'>
+								<i class="material-icons">{{amenity.iconCode}}</i><span class='facilities-text'>{{amenity.name}}</span>
+								</div>
+								<!-- <i class="material-icons">wifi</i><span class='facilities-text'>Free Wifi</span>
+								<i class="material-icons">free_breakfast</i><span class='facilities-text'>Free Breakfast</span>
+								<i class="material-icons">time_to_leave</i><span class='facilities-text'>Free Parking</span> -->
+							</div>
+						</md-card-content>
+						<div flex='25' layout='column' layout-align='none center'>
+							<div flex='25'></div>
+							<div class='hotel-price'>{{hotelSearchResult.hotelSearchResult.price | currency}}</div>
+							<md-button class='md-raised md-primary select-button'>Select</md-button>
+						</div>
+</md-card>

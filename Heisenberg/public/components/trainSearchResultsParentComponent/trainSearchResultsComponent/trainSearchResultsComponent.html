@@ -1,0 +1,64 @@
+<div class="content_div" ng-cloak layout="row" layout-sm="column">
+
+  <div id="sidebar" hide-sm hide-xs flex="20">
+    <md-grid-list md-cols=2 md-row-height="4:1" class="det_header">
+      <md-grid-tile>Filter results</md-grid-tile>
+      <md-grid-tile>
+        <md-button class="md-primary" ng-click="trainSearchResults.reset()">Reset All</md-grid-tile>
+    </md-grid-list>
+    <md-card ng-repeat="filter in trainSearchResults.filters">
+      <md-card-content>
+        <custom-input-box type='{{filter.type}}' id='{{filter.id}}' label='{{filter.label}}' specific-attr='filter.options' reflect-custom-input="trainSearchResults.reflectValue(keyString,value, id)" bind-data="" bind-data-key=""></custom-input-box>
+      </md-card-content>
+      <!-- <md-card-title>
+                <md-card-title-text>
+                  {{filter.Displayname}}
+                </md-card-title-text>
+              </md-card-title>
+                <md-card-content>
+                  <div ng-show={{filter.type=='slider'}}>
+
+                    <price-filter data="filter.data" range="trainSearchResults.range" attribute="filter.attribute" on-price-filter-change="trainSearchResults.onPriceChange(attribute,range)"></price-filter>
+                  </div>
+                  <div ng-show={{filter.type=='checkbox'}}>
+                    <area-filter data="filter.data" on-area-filter-change="trainSearchResults.onAreaChange(area,check)"></area-filter>
+
+                  </div>
+                  <div ng-show={{filter.type=='button'}}>
+                    <time-filter data="filter.data" attribute="filter.attribute" on-time-filter-change="trainSearchResults.onTimeChange(attribute,time)"></time-filter>
+
+                  </div>
+                </md-card-content> -->
+    </md-card>
+  </div>
+  <div id="mainbar" flex="100" flex-gt-sm="80">
+    <md-grid-list class="det_header md-caption" md-cols="7" md-gutter="1em" md-row-height="4:1">
+      <md-grid-tile>Train name(No)</md-grid-tile>
+      <md-grid-tile>Departure
+        <i class="material-icons sortIc" ng-show="trainSearchResults.sortIcon" ng-click="trainSearchResults.sortIcon=!trainSearchResults.sortIcon;trainSearchResults.sort('departure_time')">arrow_drop_down</i>
+        <i class="material-icons sortIc" ng-show="!trainSearchResults.sortIcon" ng-click="trainSearchResults.sortIcon=!trainSearchResults.sortIcon;trainSearchResults.sort('-departure_time')">arrow_drop_up</i>
+      </md-grid-tile>
+      <md-grid-tile>Arrival
+        <i class="material-icons sortIc" ng-show="trainSearchResults.sortIcon" ng-click="trainSearchResults.sortIcon=!trainSearchResults.sortIcon;trainSearchResults.sort('arrival_time')">arrow_drop_down</i>
+        <i class="material-icons sortIc" ng-show="!trainSearchResults.sortIcon" ng-click="trainSearchResults.sortIcon=!trainSearchResults.sortIcon;trainSearchResults.sort('-arrival_time')">arrow_drop_up</i>
+
+      </md-grid-tile>
+      <md-grid-tile>Duration</md-grid-tile>
+      <md-grid-tile>Availability/WL</md-grid-tile>
+      <md-grid-tile>Price
+        <i class="material-icons sortIc" ng-show="trainSearchResults.sortIcon" ng-click="trainSearchResults.sortIcon=!trainSearchResults.sortIcon;trainSearchResults.sort('price')">arrow_drop_down</i>
+        <i class="material-icons sortIc" ng-show="!trainSearchResults.sortIcon" ng-click="trainSearchResults.sortIcon=!trainSearchResults.sortIcon;trainSearchResults.sort('-price')">arrow_drop_up</i>
+      </md-grid-tile>
+      <md-grid-tile></md-grid-tile>
+    </md-grid-list>
+
+    <md-card ng-if="trainSearchResults.data.length==0">
+      <center>No train runs on the filters you have applied. <br> Please modify the filters.
+      </center>
+    </md-card>
+    <md-card class="animate-repeat" ng-repeat="one in trainSearchResults.data | orderBy:trainSearchResults.myorder">
+      <!--ng-if="one.price > trainSearchResults.range"-->
+      <result-component one="one"></result-component>
+    </md-card>
+  </div>
+</div>

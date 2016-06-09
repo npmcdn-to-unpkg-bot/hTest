@@ -1,0 +1,14 @@
+<br>Native html
+{{CheckBoxBoxCtrl.bindData}}
+<br>
+<label>{{CheckBoxBoxCtrl.label}}</label>
+<div ng-if="CheckBoxBoxCtrl.listType=='array'">
+ <div  ng-repeat="item in CheckBoxBoxCtrl.domainList">
+   <md-checkbox ng-checked="CheckBoxBoxCtrl.checkBoxInternalData[$index]" ng-required="{{CheckBoxBoxCtrl.required && !(CheckBoxBoxctrl.bindData.length)}}" ng-click="CheckBoxBoxCtrl.reflectValue(item, $index)" >{{item}}</md-checkbox>
+ </div>
+</div>
+<div ng-if="CheckBoxBoxCtrl.listType=='object'">
+ <div ng-repeat="(listKey, listValue) in CheckBoxBoxCtrl.domainList">
+   <md-checkbox  ng-click="CheckBoxBoxCtrl.reflectValue(listKey, $index)" ng-checked="CheckBoxBoxCtrl.checkBoxInternalData[$index]" >{{listValue}}</md-checkbox>
+ </div>
+</div>

@@ -1,0 +1,87 @@
+#content {
+    text-align: center;
+    text-transform: capitalize;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*********Material icon style and vertical line**********/
+#verticalLine {
+    height: 200%;
+    width: 1.8%;
+    background-color: #330099;
+    margin-left: 50%;
+}
+
+#box {
+    width: 35px;
+    height: 36px;                         /* icon box*/
+    background-color: #330099;
+    position: relative;
+}
+
+#circle {
+    width: 35px;
+    height: 35px;
+    background-color: #330099;
+    position: relative;                  /* icon circle*/
+    border-radius: 500px;
+    -webkit-border-radius: 500px;
+}
+
+.itineraryIcon {
+    top: 25%;
+    left: 25%;
+    color: white;
+    position: absolute;
+}
+/***********horizontal line***********/
+.horizontal {
+    width: 80px;
+    height: 0.5px;
+    background-color: #686868;
+}
+
+
+/************Font Style***************/
+.preference{
+  font-size: x-small;
+}
+.dateFont{
+  font-size: small;
+}
+.dataFont{
+  font-size: small;
+}
+.cityNameFont{
+  float: left;
+  font-size: x-large;
+  color: black;
+}
+.seconDivDataFont{
+  font-size: x-small;
+  color: black;
+}
+.priceFont {
+    color: black;
+    font-size: large;
+    font-weight: 300;
+}
+
+.timeFont {
+    color: black;
+    font-size: small;
+    font-weight: bold;
+}
+
+.cityFont {
+    color: #999999;
+    font-size: medium;
+    font-weight: 200;
+}
+
+.nameFont {
+    font-size: medium;
+    font-weight: 200;
+    color: black;
+}

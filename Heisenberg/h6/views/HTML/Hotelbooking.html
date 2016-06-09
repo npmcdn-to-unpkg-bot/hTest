@@ -1,0 +1,61 @@
+<div class="travelplan_page">
+    <!-- <md-card class="Acomodation_header" >
+        <md-card-title>
+            <md-card-title-text>
+                <span  class="md-headline" >Accommodation</span>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card> -->
+    <!-- <p>Looping with objects:{{node[0].accommodation}}</p> -->
+    <!-- <md-card> -->
+    <!-- <md-card-content> -->
+
+    <form ng-submit="submit()" class="bidi" ng-cloak  layout="row"  >
+
+        <div  flex="100" layout="column" layout-fill>
+
+            <div  ng-repeat=" o in node[0].accommodation">
+                <md-card class="bidi_details" >
+                  <span  class="md-headline" ng-show="$index==0" >Accommodation</span>
+                    <div layout="row"   layout-xs-align="center center" layout-xs="column"  layout-align="start center">
+                        <md-autocomplete class="city_field"  flex-sm-offset="10" flex="20"  flex-xs="20" required=""     md-input-name="autocompleteField" md-input-minlength="2"
+                                           md-input-maxlength="18" md-no-cache="ctrl2.noCache" md-selected-item="node[0].accommodation[$index].area"
+                                           md-search-text="ctrl2.searchText[$index]" md-items="item in ctrl2.querySearch(ctrl2.searchText[$index])"
+                                           md-item-text="item.display" md-floating-label="City">
+                            <md-item-template>
+                                <span md-highlight-text="ctrl2.searchText[$index]">{{item.display}}</span>
+                            </md-item-template>
+                        </md-autocomplete>
+
+                        <md-datepicker  flex="20" flex-xs="20"   flex-offset-gt-sm="10" ng-model="o.checkinDate" md-placeholder="checkIn date" ></md-datepicker>
+
+                        <md-datepicker  flex="20"  flex-xs="20"   flex-offset-gt-sm="10" ng-model="o.checkoutDate" md-placeholder="checkOut date" ></md-datepicker>
+
+                        <md-card-content layout="row">
+                            <ng-md-icon    flex="40" flex-offset="10"  size="45px" ng-show="$index>0"  icon="delete" size="45px" ng-click="deleteAccommodationItem($index)"  ></ng-md-icon>
+
+                            <ng-md-icon    flex="40"  flex-offset="10"  size="45px" icon="add_circle" size="45px" ng-click="add()"  ></ng-md-icon  >
+
+                        </md-card-content>
+                </md-card>
+                <!-- <md-button  flex-offset="45" flex="5" class="md-raised md-primary">Confirm</md-button> -->
+            </div><!-- end of row -->
+        </div><!-- end of repeat-->
+
+
+        <div layout="row" class="confirm_btn" >
+            <md-button  flex-offset="45" flex="5" class="md-raised md-primary">Confirm</md-button>
+        </div> -->
+         <!-- end of row containing confirm  -->
+
+</div>
+
+
+</form>
+<!-- </md-card-content> -->
+<!-- </md-card> -->
+<!-- End of form Card     -->
+
+
+
+</div>

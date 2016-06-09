@@ -1,0 +1,65 @@
+{
+  "essential": {
+    "travelStartDate": {
+      "mandatory": "true",
+      "displayName": "Travel Start Date",
+      "id": "travelStartDate",
+      "type": "date"
+    },
+    "modesToSelectTheServices": {
+      "mode":{
+        "mandatory": true,
+        "displayName": "Select the mode",
+        "id": "mode",
+        "type": "singleSelectAddChild",
+        "data": ["flight","localTravel"]
+      },
+      "extraAddOnsServices": {
+        "mandatory": false,
+        "displayName":"Extra Add-on Services",
+        "id": "extraAddOnsServices",
+        "type": "multi-select",
+        "data": ["visaOnArrival", "forex"]
+      }
+    }
+  },
+  "services": {
+    "flight":{
+        "travelStartDate":{
+            "mandatory": true,
+            "displayName": "Travel Start Date",
+            "id": "travelStartDate",
+            "type": "date",
+            "data-reference": "essential.travelStartDate"
+          },
+          "class":{
+            "mandatory":true,
+            "displayName": "Class",
+            "id": "class",
+            "type": "dropDown",
+            "data": ["Bussiness","Economy"]
+          },
+          "numberOfHops": {
+            "mandatory":true,
+            "displayName": "Number of Hops",
+            "id": "numberOfHops",
+            "type": "slider",
+            "data": {"min": 0, "min": 5 }
+          },
+          "departureTime": {
+            "mandatory": false,
+            "displayName": "Departure Time",
+            "id":"departureTime",
+            "type": "time"
+          },
+          "airlines": {
+            "mandatory": false,
+            "displayName":"Airlines",
+            "id":"airlines",
+            "type":"dropDown",
+            "data": ["Air Asia", "Air Costa", "Jet"]
+          }
+    }
+  }
+
+}

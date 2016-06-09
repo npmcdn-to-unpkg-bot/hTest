@@ -1,0 +1,68 @@
+<md-card flex-xs="50" ng-model="flightSearchResult.flightSearchResult">
+    <div layout="column">
+        <div layout="row" layout="center center">
+            <div layout="column" flex="15" flex-offset="5" layout-align="center center">
+                <img ng-src="public/assets/images/{{flightSearchResult.flightSearchResult.imagePath}}" alt="{{flightSearchResult.flightSearchResult.imagePath}}">
+            </div>
+            <div layout="column" flex="10" layout-align="center none" class="text-align-right">
+                <h4>{{flightSearchResult.flightSearchResult.arrivalTime}}</h4>  
+                <div>{{flightSearchResult.from}}</div>
+            </div>
+            <div layout="column" flex="10" layout-align="center center" class="text-align-left">
+                <h3 class="material-icons md-36">trending_flat</h3>
+            </div>
+            <div layout="column" flex="10" layout-align="center none" class="text-align-left">    
+                <h4>{{flightSearchResult.flightSearchResult.departureTime}}</h4>
+                <div>{{flightSearchResult.to}}</div>
+            </div>
+            <div layout="column" flex="15" layout-align="center center">
+                <div>{{flightSearchResult.flightSearchResult.duration}}</div>
+                <!--TODO If zero stops display Non Stop-->
+                <div>{{flightSearchResult.flightSearchResult.stops}} stops</div>
+            </div>
+            <div layout="column" flex="15" layout-align="center center">
+                <div layout="row" flex="100" layout-align="space-around center">
+                    <i class="material-icons md-16 light-blue-font">room_service</i>
+                    <i class="material-icons md-16 light-blue-font" flex-offset="20">work</i>
+                </div>
+            </div>
+            <div layout="column" flex="25" layout-align="center center">
+                <h3>{{flightSearchResult.flightSearchResult.price}}</h3>
+                <button class="button md-raised md-primary md-button md-ink-ripple" ng-click="selectFlight('SpiceJet')" type="button" aria-label="Select"><span class="ng-scope">Select</span><div class="md-ripple-container"></div></button>
+            </div>
+        </div>
+        <div layout="row" layout="center center">
+            <div ng-switch="flightSearchResult.showMore" layout="row" layout-align="center center" flex="100">
+                <a ng-switch-when="false" ng-click="flightSearchResult.viewMore()">View More</a>
+                <div ng-switch-when="true" layout="row" flex="100">
+                    <div layout="column"  flex="30" class="text-align-right">
+                        <div>{{flightSearchResult.sourceDetails.date}}</div>
+                        <div class="md-body-2">{{flightSearchResult.sourceDetails.source}}</div>
+                        <div class="md-body-2">{{flightSearchResult.sourceDetails.country}}</div>
+                    </div>
+                    <div layout="column" flex-offset="10" flex="25" class="text-align-left">
+                        <div>{{flightSearchResult.destinationDetails.date}}</div>
+                        <div>{{flightSearchResult.destinationDetails.source}}</div>
+                        <div>{{flightSearchResult.destinationDetails.country}}</div>
+                    </div>
+                    <div layout="column" flex-offset="5" flex="40">
+                        <div layout="row">
+                            <i class="material-icons md-16 light-blue-font" flex="10">room_service</i>
+                            <div flex="30" flex-offset="5" layout="column">
+                                <div>{{flightSearchResult.mealsInformation.displayName}}</div>
+                                <div>{{flightSearchResult.mealsInformation.information}}</div>                                
+                            </div>                            
+                        </div>
+                        <div layout="row">
+                            <i class="material-icons md-16 light-blue-font">work</i>
+                            <div flex="30" flex-offset="5" layout="column">
+                                <div>{{flightSearchResult.baggageInformation.displayName}}</div>
+                                <div>{{flightSearchResult.baggageInformation.information}}</div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</md-card>

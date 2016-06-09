@@ -1,0 +1,168 @@
+{
+  "essential": {
+    "location": {
+      "mandatory": true,
+      "displayName": "City",
+      "id": "location",
+      "type": "autoComplete",
+      "data": "sampleurl"
+    },
+    "modesToSelectTheServices": {
+      "basicServices":{
+        "mandatory": false,
+        "displayName": "Select Basic Services",
+        "id": "selectedServices",
+        "type": "multiSelectAddChild",
+        "data": ["stay","localTravel"]
+      }
+    }
+  },
+  "services": {
+                "stay": {
+                  "location":{
+                    "mandatory": true,
+                    "displayName": "City",
+                    "id": "location",
+                    "type": "autoComplete",
+                    "data-reference": "essential.location"
+
+                  },
+                	"area": {
+                		"mandatory": true,
+                		"displayName": "Area",
+                		"id": "area",
+                		"type": "autoComplete",
+                		"data": "areaLocationUrl"
+
+                	},
+                	"checkindate":{
+                    "mandatory": true,
+                  	"displayName": "Check-in Date",
+                  	"id": "checkindate",
+                  	"type": "date"
+                	},
+                	"checkoutdate":{
+                  	"mandatory": true,
+                		"displayName": "Check-out Date",
+                		"id": "checkoutdate",
+                		"type": "date"
+                	},
+                  "checkinTime":{
+                    "mandatory": true,
+                  	"displayName": "Check-in Time",
+                  	"id": "checkinTime",
+                  	"type": "time"
+                	},
+                	"checkoutTime":{
+                  	"mandatory": true,
+                		"displayName": "Check-out Time",
+                		"id": "checkoutTime",
+                		"type": "time"
+                	}
+                  ,
+                	"preferences":{
+                	  "mandatory": false,
+                		"displayName": "Preferences",
+                		"id": "preferences",
+                		"type": "dropDown",
+                		"data":["ac","non-ac"]
+                	},
+                	"rating":
+                	{
+                	  "mandatory": false,
+                		"displayName": "Rating",
+                		"id": "rating",
+                		"type": "dropDown",
+                		"data":["1-star","2-star","3-star","4-star"]
+                	},
+                  "nearBy" : {
+                    "mandatory": false,
+                		"displayName": "Near By",
+                		"id": "nearBy",
+                		"type": "slider",
+                		"data": {"min":0.1, "max":100}
+                  }
+                  ,
+                  "typeOfProperty":
+                  {
+                    "mandatory": true,
+                		"displayName": "Type Of Property",
+                		"id": "typeOfProperty",
+                		"type": "dropDown",
+                		"data":["Guest House", "Hotels"]
+                  },
+                  "stars":
+                	{
+                	  "mandatory": false,
+                		"displayName": "Stars",
+                		"id": "stars",
+                		"type": "dropDown",
+                		"data":["1-star","3-star", "5-star", "7-star"]
+                	},
+                  "amenities":{
+                    "mandatory": false,
+                		"displayName": "Amenities",
+                		"id": "amenities",
+                		"type": "multiSelect",
+                		"data":["meeting rooms", "swimming pool", "fitness", "restaurants"]
+                  },
+                  "proximity": {
+                    "mandatory": false,
+                		"displayName": "Proximity",
+                		"id": "proximity",
+                		"type": "multiSelect",
+                		"data":["metro station", "taxi stands", "airports", "railway stations" ]
+
+                  }
+
+                }
+,
+    "localTravel": {
+                    "pickupPoint": {
+                      "mandatory": true,
+                  		"displayName": "Pick-up Point",
+                  		"id": "pickupPoint",
+                  		"type": "autoComplete",
+                  		"data": ["koramangala",
+                  			"SilkBoard",
+                  			"Electronic City",
+                  			"Sarjapura"
+                  		]
+                    },
+
+                    "dropPoint": {
+                      "mandatory": true,
+                  		"displayName": "Drop Point",
+                  		"id": "dropPoint",
+                  		"type": "autoComplete",
+                  		"data": ["koramangala",
+                  			"SilkBoard",
+                  			"Electronic City",
+                  			"Sarjapura"
+                  		]
+                    },
+                    "typeOfLocalTransport": {
+                      "mandatory": true,
+                      "displayName": "Type",
+                      "id": "typeOfLocalTransport",
+                      "type": "dropDown",
+                      "data": ["Cab", "Bus"
+                      ]
+                    },
+
+                    "pickupDate": {
+                      "mandatory": true,
+                      "displayName": "Pick up Date",
+                      "id": "pickupDate",
+                      "type": "date"
+                    },
+                    "pickupTime": {
+                      "mandatory": true,
+                      "displayName": "Pick up Time",
+                      "id": "pickupTime",
+                      "type": "time"
+                    }
+                  }
+
+  }
+}

@@ -1,0 +1,19 @@
+<div layout='row' id='main-wrapper'>
+	<div flex='25' id='filter-wrapper'>
+		<md-card ng-repeat='filter in hotelSearchResults.filters'>
+			<md-card-content>
+				<custom-input-box  type='{{filter.type}}' id='{{filter.id}}' label='{{filter.label}}' specific-attr='filter.options' reflect-custom-input="hotelSearchResults.reflectValue(keyString,value, id)" bind-data="hotelSearchResults.checkBoxInput.data" bind-data-key="checkBoxInput.data"></custom-input-box>
+			</md-card-content>
+		</md-card>
+
+
+		<!-- <md-card>
+			<custom-input-box  type='rangeSlider' id='demoRangeSlider' label='Demo Range Slider' specific-attr='hotelSearchResults.rangeSlider' reflect-custom-input="hotelSearchResults.reflect(keyString,value, id)" bind-data="hotelSearchResults.rangeSliderInput.data" bind-data-key="rangeSliderInput.data"></custom-input-box>
+		</md-card> -->
+	</div>
+
+
+	<div flex='75' flex-sm='100' flex-xs='100' id='results-wrapper'>
+		<hotel-search-result ng-repeat='searchResult in hotelSearchResults.searchResults' hotel-search-result='searchResult ' selected-filters='hotelSearchResults.selectedFilters' ng-if='hotelSearchResults.applyFilters(searchResult)'></hotel-search-result>
+	</div>
+</div>

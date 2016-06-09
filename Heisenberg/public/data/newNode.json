@@ -1,0 +1,68 @@
+{
+  "cityName": "",
+  "status": "",
+  "childServices": {
+    "nodeS1": {
+      "type": "",
+      "status": "",
+      "request": {
+        "area": "",
+        "rating": "",
+        "roomType": "",
+        "checkinDate": "",
+        "checkoutDate": ""
+      },
+      "final": {
+        "image": "",
+        "name": "",
+        "rating": "",
+        "location": "",
+        "roomType": "",
+        "checkinDate": "",
+        "checkinTime": "",
+        "checkoutDate": "",
+        "checkoutTime": "",
+        "price": "",
+        "comments": ""
+      }
+    },
+    "nodeT1": {
+      "type": "",
+      "status": "",
+      "request": {
+        "source": "",
+        "destination": "",
+        "type": "",
+        "pickupDate": "",
+        "pickupTime": ""
+      },
+      "final": {
+        "source": "",
+        "destination": "",
+        "type": "",
+        "pickupDate": "",
+        "pickupTime": "",
+        "dropDate": "",
+        "dropTime": "",
+        "cab": {
+          "image": "",
+          "companyName": "",
+          "cabNumber": "",
+          "driverDetails": {
+            "name": ""
+          },
+          "estimatedPrice": "",
+          "cabType": ""
+        },
+        "bus": {
+          "image": "",
+          "companyName": "",
+          "busNumber": "",
+          "busType": "",
+          "seatsType": "",
+          "price": ""
+        }
+      }
+    }
+  }
+}

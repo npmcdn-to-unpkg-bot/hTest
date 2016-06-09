@@ -1,0 +1,42 @@
+
+
+                <md-card id="calendar">
+
+                    <md-card-title-text>
+            <span class="md-headline">
+              <i id="cal" class="material-icons">flight</i>{{calendar.calendarDisplayName}}</span>
+                        <!-- <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker> -->
+                    </md-card-title-text>
+                    <div id="calctrl" >
+
+                        <calendar-md id="cal_layout" flex layout layout-fill
+
+                                     calendar-direction="direction"
+                                     on-prev-month="prevMonth"
+                                     on-next-month="nextMonth"
+                                     on-day-click="dayClick"
+                                     title-format="'MMMM y'"
+                                     ng-model='selectedDate'
+                                     week-starts-on="firstDayOfWeek"
+                                     data-start-month="3"
+                                     data-start-year="2016"
+                                     tooltips="tooltips"
+                                     day-format="dayFormat"
+                                     day-label-format="'EEE'"
+                                     day-label-tooltip-format="'EEEE'"
+                                     day-tooltip-format="'fullDate'"
+                                     day-content="setDayContent"
+                                     disable-future-selection="false"
+                        ></calendar-md>
+                        <div id="cal1" layout="row" layout-align="space-between center">
+                            <div id="cal2"></div>
+
+                            {{calendar.approved}}
+                            <div id="cal3"></div>
+
+                            {{calendar.past}}
+                            <div id="cal4"></div>
+                            {{calendar.pending}}
+                        </div>
+                    </div>
+                </md-card>

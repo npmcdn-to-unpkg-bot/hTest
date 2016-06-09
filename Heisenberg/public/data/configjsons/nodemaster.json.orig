@@ -1,0 +1,456 @@
+{
+	"servicesDetails":
+	{
+		"stay":{
+			"icons": "hotel",
+			"displayName": "Stay"
+		},
+		"localTravel":{
+			"icons":"directions_car",
+			"displayName": "Local Travel"
+		}
+	},
+<<<<<<< HEAD
+  "essential": {
+    "noDependencyData": {
+      "location": {
+        "mandatory": true,
+        "displayName": "City",
+        "id": "location",
+        "type": "autoComplete",
+        "specificAttr": {
+          "url": "autoComplete.json"
+        }
+      }
+    },
+    "modesToSelectTheServices": {
+      "basicServices": {
+        "mandatory": false,
+        "displayName": "Select Basic Services",
+        "id": "selectedServices",
+        "type": "checkBox",
+        "specificAttr": {
+          "domainList": {
+            "stay": "Stay",
+            "localTravel": "Local Travel"
+          }
+        }
+      }
+    }
+  },
+  "servicesIntializer": {
+    "stay": [
+      {
+        "state": "initial",
+        "requested": {}
+      }
+    ],
+    "localTravel": [
+      {
+        "state": "initial",
+        "requested": {}
+      }
+    ]
+  },
+  "services": {
+    "stay": {
+      "location": {
+        "mandatory": true,
+        "displayName": "City",
+        "id": "location",
+        "type": "autoComplete",
+        "specificAttr": {
+          "url": "autoComplete.json"
+        }
+      },
+      "area": {
+        "mandatory": true,
+        "displayName": "Area",
+        "id": "area",
+        "type": "autoComplete",
+        "specificAttr": {
+          "url": "autoComplete.json"
+        }
+      },
+      "checkinDate": {
+        "mandatory": true,
+        "displayName": "Check-in Date",
+        "id": "checkinDate",
+        "type": "date"
+      },
+      "checkinDate": {
+        "mandatory": true,
+        "displayName": "Check-out Date",
+        "id": "checkoutDate",
+        "type": "date"
+      },
+      "checkinTime": {
+        "mandatory": true,
+        "displayName": "Check-in Time",
+        "id": "checkinTime",
+        "type": "time"
+      },
+      "checkoutTime": {
+        "mandatory": true,
+        "displayName": "Check-out Time",
+        "id": "checkoutTime",
+        "type": "time"
+      },
+      "preferences": {
+        "mandatory": false,
+        "displayName": "Preferences",
+        "id": "preferences",
+        "type": "singleSelect",
+        "specificAttr": {
+          "domainList": {
+            "ac": "AC",
+            "nonAc": "Non-Ac"
+          }
+        }
+      },
+      "rating": {
+        "mandatory": false,
+        "displayName": "Rating",
+        "id": "rating",
+        "type": "singleSelect",
+        "specificAttr": {
+          "domainList": {
+            "oneStar": "1-star",
+            "twoStar": "2-star",
+            "threeStar": "3-star",
+            "fourStar": "4-star"
+          }
+        }
+      },
+      "typeOfProperty": {
+        "mandatory": true,
+        "displayName": "Type Of Property",
+        "id": "typeOfProperty",
+        "type": "singleSelect",
+        "specificAttr": {
+          "domainList": {
+            "guestHouse": "Guest House",
+            "hotels": "Hotels"
+          }
+        }
+      },
+      "nearBy": {
+        "mandatory": false,
+        "displayName": "Near By",
+        "id": "nearBy",
+        "type": "singleSlider",
+        "specificAttr": {
+          "floor": 0,
+          "ceil": 100,
+          "step": 1,
+          "noSwitching": true,
+          "endPointsTranslate": {
+            "prefix": "",
+            "postfix": "miles"
+          },
+          "sliderHandleTranslate": {
+            "prefix": "",
+            "postfix": "mi"
+          }
+        }
+      },
+      "stars": {
+        "mandatory": false,
+        "displayName": "Stars",
+        "id": "stars",
+        "type": "singleSelect",
+        "specificAttr": {
+          "domainList": {
+            "oneStar": "1-star",
+            "twoStar": "2-star",
+            "threeStar": "3-star",
+            "fourStar": "4-star"
+          }
+        }
+      },
+      "amenities": {
+        "mandatory": false,
+        "displayName": "Amenities",
+        "id": "amenities",
+        "type": "multiSelect",
+        "specificAttr": {
+          "domainList": {
+            "meetingRooms": "Meeting Rooms",
+            "swimmingPools": "Swimming Pool",
+            "fitness": "Fitness",
+            "restaurants": "Restraunts"
+          }
+        }
+      },
+      "proximity": {
+        "mandatory": false,
+        "displayName": "Proximity",
+        "id": "proximity",
+        "type": "singleSelect",
+        "specificAttr": {
+          "domainList": {
+            "metroStation": "Metro Station",
+            "taxiStands": "Taxi Stands",
+            "airports": "Airports",
+            "railwayStations": "Railway Stations"
+          }
+        }
+      }
+    },
+    "localTravel": {
+      "pickupPoint": {
+        "mandatory": true,
+        "displayName": "Pick-up Point",
+        "id": "pickupPoint",
+        "type": "autoComplete",
+        "specificAttr": {
+          "url": "autoComplete.json"
+        }
+      },
+      "dropPoint": {
+        "mandatory": true,
+        "displayName": "Drop Point",
+        "id": "dropPoint",
+        "type": "autoComplete",
+        "specificAttr": {
+          "url": "autoComplete.json"
+        }
+      },
+      "typeOfLocalTransport": {
+        "mandatory": true,
+        "id": "typeOfLocalTransport",
+        "displayName": "Type",
+        "type": "singleSelect",
+        "specificAttr": {
+          "domainList": {
+            "cab": "Cab",
+            "bus": "Bus"
+          }
+        }
+      },
+      "pickupDate": {
+        "mandatory": true,
+        "displayName": "Pick up Date",
+        "id": "pickupDate",
+        "type": "date"
+      },
+      "pickupTime": {
+        "mandatory": true,
+        "displayName": "Pick up Time",
+        "id": "pickupTime",
+        "type": "time"
+      }
+    }
+  }
+=======
+	"essential": {
+		"noDependencyData": {
+			"location": {
+				"mandatory": true,
+				"displayName": "City",
+				"id": "location",
+				"type": "autoComplete",
+				"specificAttr": {
+					"url":"autoComplete.json"
+				}
+			}
+		},
+		"modesToSelectTheServices": {
+			"basicServices": {
+				"mandatory": false,
+				"displayName": "Select Basic Services",
+				"id": "selectedServices",
+				"type": "checkBox",
+				"specificAttr": {
+					"domainList": {
+						"stay": "Stay",
+						"localTravel": "Local Travel"
+					}
+				},
+				"javascriptDataType": "Array"
+
+			}
+		}
+	},
+	"servicesIntializer":{
+		"stay": [
+							{
+									"state": "initial",
+									"requested": {}
+							}
+						],
+		"localTravel": [{
+
+					"state": "initial",
+					"requested": {}
+			}]
+	}
+	,
+	"services": {
+		"stay": {
+			"location": {
+				"mandatory": true,
+				"displayName": "City",
+				"id": "location",
+				"type": "autoComplete",
+				"specificAttr": {
+			"url":"autoComplete.json"
+				}
+			},
+			"area": {
+				"mandatory": true,
+				"displayName": "Area",
+				"id": "area",
+				"type": "autoComplete",
+				"specificAttr": {
+			"url":"autoComplete.json"
+				}
+			},
+			"checkinDate": {
+				"mandatory": true,
+				"displayName": "Check-in Date",
+				"id": "checkinDate",
+				"type": "date"
+			},
+			"checkinDate": {
+				"mandatory": true,
+				"displayName": "Check-out Date",
+				"id": "checkoutDate",
+				"type": "date"
+			},
+			"checkinTime": {
+				"mandatory": true,
+				"displayName": "Check-in Time",
+				"id": "checkinTime",
+				"type": "time"
+			},
+			"checkoutTime": {
+				"mandatory": true,
+				"displayName": "Check-out Time",
+				"id": "checkoutTime",
+				"type": "time"
+			},
+			"preferences": {
+				"mandatory": false,
+				"displayName": "Preferences",
+				"id": "preferences",
+				"type": "singleSelect",
+				"specificAttr": {
+					"domainList": {"ac":"AC" ,"nonAc":"Non-Ac"}
+				}
+			},
+			"rating": {
+				"mandatory": false,
+				"displayName": "Rating",
+				"id": "rating",
+				"type": "singleSelect",
+				"specificAttr": {
+					"domainList": {"oneStar":"1-star", "twoStar":"2-star", "threeStar":"3-star", "fourStar":"4-star"}
+				}
+			},
+			"typeOfProperty": {
+				"mandatory": true,
+				"displayName": "Type Of Property",
+				"id": "typeOfProperty",
+				"type": "singleSelect",
+				"specificAttr": {
+					"domainList": {"guestHouse":"Guest House", "hotels":"Hotels"}
+				}
+			},
+			"nearBy": {
+				"mandatory": false,
+				"displayName": "Near By",
+				"id": "nearBy",
+				"type": "singleSlider",
+				"specificAttr": {
+					"floor":0,
+					"ceil": 100,
+					"step": 1,
+					"noSwitching": true,
+					"endPointsTranslate": {
+						"prefix": "",
+						"postfix": "miles"
+					},
+					"sliderHandleTranslate": {
+						"prefix": "",
+						"postfix": "mi"
+					}
+				}
+			},
+
+			"stars": {
+				"mandatory": false,
+				"displayName": "Stars",
+				"id": "stars",
+				"type": "singleSelect",
+				"specificAttr": {
+					"domainList": {"oneStar":"1-star", "twoStar":"2-star", "threeStar":"3-star", "fourStar":"4-star"}
+				}
+			},
+			"amenities": {
+				"mandatory": false,
+				"displayName": "Amenities",
+				"id": "amenities",
+				"type": "multiSelect",
+				"specificAttr": {
+					"domainList": {"meetingRooms":"Meeting Rooms", "swimmingPools":"Swimming Pool", "fitness":"Fitness", "restaurants":"Restraunts"}
+				}
+			},
+			"proximity": {
+				"mandatory": false,
+				"displayName": "Proximity",
+				"id": "proximity",
+				"type": "singleSelect",
+				"specificAttr": {
+					"domainList": {"metroStation":"Metro Station", "taxiStands":"Taxi Stands", "airports":"Airports", "railwayStations":"Railway Stations"}
+				}
+
+			}
+
+		},
+		"localTravel": {
+			"pickupPoint": {
+				"mandatory": true,
+				"displayName": "Pick-up Point",
+				"id": "pickupPoint",
+				"type": "autoComplete",
+				"specificAttr": {
+			"url":"autoComplete.json"
+				}
+			},
+
+			"dropPoint": {
+				"mandatory": true,
+				"displayName": "Drop Point",
+				"id": "dropPoint",
+				"type": "autoComplete",
+				"specificAttr": {
+			"url":"autoComplete.json"
+				}
+			},
+			"typeOfLocalTransport": {
+				"mandatory": true,
+				"id": "typeOfLocalTransport",
+				"displayName": "Type",
+				"type": "singleSelect",
+				"specificAttr": {
+					"domainList": {"cab":"Cab", "bus":"Bus"}
+				}
+			},
+
+			"pickupDate": {
+				"mandatory": true,
+				"displayName": "Pick up Date",
+				"id": "pickupDate",
+				"type": "date"
+			},
+			"pickupTime": {
+				"mandatory": true,
+				"displayName": "Pick up Time",
+				"id": "pickupTime",
+				"type": "time"
+			}
+		}
+	}
+>>>>>>> 813fd44e5864209df3125f0578add86b548fd759
+}

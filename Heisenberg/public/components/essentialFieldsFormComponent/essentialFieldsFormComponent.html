@@ -1,0 +1,33 @@
+<md-card>
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Essential Fields</span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content layout="row">
+    <div flex-offset="10" ng-repeat="(fieldId, fieldData) in essentialFieldsFormComponentCtrl.formFieldEssentialData.noDependencyData">
+      <custom-input-box specific-attr = 'fieldData.specificAttr' type = '{{fieldData.type}}' label = " {{fieldData.displayName}}"
+      bind-data = "essentialFieldsFormComponentCtrl.formData[fieldId]"
+      id="{{fieldId}}"
+      reflect-custom-input = "essentialFieldsFormComponentCtrl.reflectValue(keyString,value, id)">
+      </custom-input-box>
+    </div>
+
+    <div flex-offset="10" ng-repeat="(fieldId, fieldData) in  essentialFieldsFormComponentCtrl.formFieldEssentialData.modesToSelectTheServices">
+      <custom-input-box specific-attr="fieldData.specificAttr" type="{{fieldData.type}}" label="{{fieldData.displayName}}"
+      id="{{fieldId}}" bind-data="essentialFieldsFormComponentCtrl.formData[fieldId]"
+      reflect-custom-input="essentialFieldsFormComponentCtrl.reflectValue(keyString,value,id)">
+      </custom-input-box>
+    </div>
+
+  </md-card-content>
+</md-card>
+
+<!-- <md-card-content layout="row">
+  <div flex-offset="10" ng-repeat="(essentialFieldKey,essentialFieldData) in essentialFieldsFormComponentCtrl.essentialFormData">
+    <div  ng-repeat="(servicesFieldKey,servicesFieldData) in essentialFieldValue">
+      <custom-input-box specific-attr="servicesFieldData.specificAttr" type="{{servicesFieldData.type}}" label="{{servicesFieldData.displayName}}" bind-data="essentialFieldsFormComponentCtrl.selectedServices" bind-data-key="selectedServices" reflect-custom-input="essentialFieldsFormComponentCtrl.reflectValue(keyString,value)">
+      </custom-input-box>
+    </div>
+  </div>
+</md-card-content> -->

@@ -1,0 +1,20 @@
+<div ng-repeat="serviceGroup in childServicesWrapperComponentCtrl.childServicesGroups">
+
+  <child-services-panel-component service-data = 'childServicesWrapperComponentCtrl.childServicesGroups[serviceGroup]' service-fields= "childServicesWrapperComponentCtrl.form-fields-data[serviceGroup]" service-group-id="serviceGroup"  reflect-service-data-change="childServicesWrapperComponentCtrl.reflectChangeInService(serviceData, serviceId, fieldId)" service-display-name="childServicesWrapperComponentCtrl.formFieldsServicesNames[serviceGroup]"></child-services-panel-component>
+
+</div>
+
+
+<!-- <md-whiteframe class="md-whiteframe-24dp" layout="column">
+  <md-card ng-repeat="serviceGroup in childServicesWrapperComponentCtrl.childServicesGroups">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{childServicesWrapperComponentCtrl.form-fields-data[serviceGroup]}}</span>
+      </md-card-title-text>
+    </md-card-title>
+    <child-services-panel-component service="serviceGroup" ></child-services-panel-component>
+  </md-card>
+  <div layout="row">
+    <md-button flex-offset="90" class="md-raised md-primary">Next</md-button>
+  </div>
+</md-whiteframe> -->

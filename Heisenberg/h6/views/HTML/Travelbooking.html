@@ -1,0 +1,186 @@
+
+    <div ng-cloak class="md-inline-form" style="background-color:#f4f3ef;">
+        <md-input-container>
+                    <label>{{value.displayName}}</label>
+                    <md-select ng-model="node1" multiple>
+                    <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'meat' }">{{topping.name}}</md-option>
+                    <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'veg' }">{{topping.name}}</md-option>
+                    </md-select>
+          </md-input-container>
+        <md-card ng-repeat='(serviceName, serviceParameters) in nodeMaster.services' class="hotel_stay">
+             <div ng-repeat='(fieldName, fieldParameters) in serviceParameters'>
+             <div ng-switch='fieldParameters.type'>
+                <div ng-switch-when='dropDown'>
+                    <label>{{fieldParameters.displayName}}</label>
+                    <md-select ng-model="currentNode.childServices.node1S1.requestedData[fieldParameters.displayName]" multiple>
+                    <md-option ng-value="option" ng-repeat="option in fieldParameters.data">{{option}}</md-option>
+                    </md-select>
+                </div>
+                <div ng-switch-when='date'>
+                    <md-datepicker ng-model="currentNode.childServices.node1S1.requestedData[fieldParameters.displayName]" md-placeholder="{{fieldParameters.displayName}}"
+        md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                </div>
+                <div ng-switch-when='time'>
+                    <mdp-time-picker mdp-auto-switch="true" ng-model="currentNode.childServices.node1S1.requestedData[fieldParameters.displayName]"></mdp-time-picker>
+                </div>
+                <div ng-switch-when='autoComplete'>
+                    <md-autocomplete required="" md-input-name="fieldParameters.displayName" md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl2.noCache" md-selected-item="currentNode.childServices.node1S1.requestedData[fieldParameters.displayName]" md-search-text="ctrl2.searchText[$index]" md-items="item in ctrl2.querySearch(ctrl2.searchText[$index])" md-item-text="item.display" md-floating-label="City">
+                        <md-item-template>
+                            <span md-highlight-text="ctrl2.searchText[$index]">{{item.display}}</span>
+                        </md-item-template>
+                    </md-autocomplete>
+                </div>
+             </div>
+          </div>
+        </md-card>
+       <!--  <md-card>
+            <md-card-content>
+                <form ng-submit="submit()" class="bidi" ng-cloak>
+                     <p>Selected Value: <span class="radioValue">{{ selectedMode }}</span> </p>
+                  <md-radio-group ng-model="edge[currentEdgeIndex].mode" layout="row"    layout-align="center center">
+                        <md-radio-button value="Flight" class="md-primary">Flight</md-radio-button>
+                        <md-radio-button value="Train">Train</md-radio-button>
+                        <md-radio-button value="Bus">Bus</md-radio-button>
+                    <md-radio-button value="train">Train</md-radio-button>
+                    <md-radio-button value="directions_bus">Bus</md-radio-button>
+                    </md-radio-group>
+                </form>
+            </md-card-content>
+        </md-card>
+        <md-card>
+            <md-card-content>
+                <md-content layout-padding>
+                    <div>
+                <form name="userForm" ng-show="edge[currentEdgeIndex].mode=='Flight'">
+                          ng-show="$root.travelPlanJSON.edges['edge'+currentIndex].childServices.edgeMode1.request.mode=='flight'">
+                            <div layout-gt-xs="row">
+
+                    <md-autocomplete flex="" required="" md-input-name="autocompleteField" md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache" md-selected-item="node[edge[currentEdgeIndex].startNode].city" md-search-text="ctrl1.searchText" md-items="item in ctrl1.querySearch(ctrl1.searchText)" md-item-text="item.display" md-floating-label="Source">
+                                             md-input-name="autocompleteField"
+                                             md-input-minlength="2"
+                                             md-input-maxlength="18"
+                                             md-no-cache="ctrl1.noCache"
+                                             md-selected-item="$root.travelPlanJSON.nodes['node'+currentIndex].cityName"
+                                             md-search-text="ctrl1.searchText"
+                                             md-items="item in ctrl1.querySearch(ctrl1.searchText)"
+                                             md-item-text="item.display" md-floating-label="Source">
+
+                                    <md-item-template>
+                                        <span md-highlight-text="ctrl1.searchText">{{item.display}}</span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                    <md-autocomplete flex="" required="" md-input-name="autocompleteField" md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache" md-selected-item="node[edge[currentEdgeIndex].endNode].city" md-search-text="ctrl1.searchText2" md-items="item in ctrl1.querySearch(ctrl1.searchText2)" md-item-text="item.display" md-floating-label="Destination">
+                                             md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache"
+                                             md-selected-item="$root.travelPlanJSON.nodes['node'+(currentIndex+1)].cityName"
+                                             md-search-text="ctrl1.searchText2"
+                                             md-items="item in ctrl1.querySearch(ctrl1.searchText2)"
+                                             md-item-text="item.display" md-floating-label="Destination">
+
+                                    <md-item-template>
+                                        <span md-highlight-text="ctrl1.searchText2">{{item.display}}</span>
+                                    </md-item-template>
+                                     <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+                                         <div ng-message="required">You <b>must</b> have a favorite state.</div>
+                                         <div ng-message="minlength">Your entry is not long enough.</div>
+                                         <div ng-message="maxlength">Your entry is too long.</div>
+                                     </div>
+                                </md-autocomplete>
+                    <md-datepicker flex-offset="5" ng-model="edge[currentEdgeIndex].date" md-placeholder="Enter date" ></md-datepicker>
+                                           md-placeholder="Enter date"></md-datepicker>
+                                <md-input-container flex-offset="5">
+                                    <label>Preferences</label>
+                        <md-select ng-model="edge[currentEdgeIndex].preference">
+                                        <md-optgroup label="Class">
+                                            <md-option ng-value="item" ng-repeat="item in flightFilters"> {{item}}
+                                            </md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                                <md-input-container flex-offset="5">
+                                    <md-button class="md-raised md-primary">Confirm</md-button>
+
+                                </md-input-container>
+                            </div>
+                        </form>
+                <form name="userForm" ng-show="edge[currentEdgeIndex].mode=='Train'">
+                          ng-show="$root.travelPlanJSON.edges['edge'+currentIndex].childServices.edgeMode1.request.mode=='train'">
+                            <div layout-gt-xs="row">
+                                <md-autocomplete flex="" required="" md-input-name="autocompleteField"
+                                                 md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache"
+                                                 md-selected-item="source" md-search-text="ctrl1.searchText"
+                                                 md-items="item in ctrl1.querySearch(ctrl1.searchText)"
+                                                 md-item-text="item.display" md-floating-label="Source">
+                                    <md-item-template>
+                                        <span md-highlight-text="ctrl1.searchText">{{item.display}}</span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                                <md-autocomplete flex="" required="" md-input-name="autocompleteField"
+                                                 md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache"
+                                                 md-selected-item="destination" md-search-text="ctrl1.searchText2"
+                                                 md-items="item in ctrl1.querySearch(ctrl1.searchText2)"
+                                                 md-item-text="item.display" md-floating-label="Destination">
+                                    <md-item-template>
+                                        <span md-highlight-text="ctrl1.searchText2">{{item.display}}</span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                                <md-datepicker flex-offset="5" ng-model="user.myDate"
+                                               md-placeholder="Enter date"></md-datepicker>
+                                <md-input-container flex-offset="5">
+                                    <label>Preferences</label>
+                        <md-select ng-model="edge[currentEdgeIndex].preference" md-selected-text="getSelectedText()">
+                                           md-selected-text="getSelectedText()">
+                                        <md-optgroup label="Class">
+                                            <md-option ng-value="item" ng-repeat="item in trainFilters"> {{item}}
+                                            </md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                                <md-input-container flex-offset="5">
+                                    <md-button class="md-raised md-primary">Confirm</md-button>
+                                </md-input-container>
+                            </div>
+                        </form>
+                <form name="userForm" ng-show="edge[currentEdgeIndex].mode=='Bus'">
+                          ng-show="travelPlanJSON.edges['edge'+currentIndex].childServices.edgeMode1.request.mode=='directions_bus'">
+                            <div layout-gt-xs="row">
+                                <md-autocomplete flex="" required="" md-input-name="autocompleteField"
+                                                 md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache"
+                                                 md-selected-item="source" md-search-text="ctrl1.searchText"
+                                                 md-items="item in ctrl1.querySearch(ctrl1.searchText)"
+                                                 md-item-text="item.display" md-floating-label="Source">
+                                    <md-item-template>
+                                        <span md-highlight-text="ctrl1.searchText">{{item.display}}</span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                                <md-autocomplete flex="" required="" md-input-name="autocompleteField"
+                                                 md-input-minlength="2" md-input-maxlength="18" md-no-cache="ctrl1.noCache"
+                                                 md-selected-item="destination" md-search-text="ctrl1.searchText2"
+                                                 md-items="item in ctrl1.querySearch(ctrl1.searchText2)"
+                                                 md-item-text="item.display" md-floating-label="Destination">
+                                    <md-item-template>
+                                        <span md-highlight-text="ctrl1.searchText2">{{item.display}}</span>
+                                    </md-item-template>
+                                </md-autocomplete>
+                                <md-datepicker flex-offset="5" ng-model="user.myDate"
+                                               md-placeholder="Enter date"></md-datepicker>
+                                <md-input-container flex-offset="5">
+                                    <label>Preferences</label>
+                      <md-select ng-model="edge[currentEdgeIndex].preference" md-selected-text="getSelectedText()">
+                                           md-selected-text="getSelectedText()">
+                                        <md-optgroup label="Class">
+                                            <md-option ng-value="item" ng-repeat="item in busFilters"> {{item}}</md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                                <md-input-container flex-offset="5">
+                                    <md-button class="md-raised md-primary">Confirm</md-button>
+                                </md-input-container>
+                            </div>
+                        </form>
+                    </div>
+                </md-content>
+
+            </md-card-content>
+        </md-card>
+     -->
+    </div>

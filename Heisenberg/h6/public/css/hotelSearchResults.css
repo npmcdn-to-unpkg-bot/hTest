@@ -1,0 +1,47 @@
+/*html, body {
+    overflow: auto;
+}*/
+
+
+.results-card {
+    height: 150px;
+}
+
+.hotel-price {
+    font-size: 22px;
+}
+
+.facilities-text {
+    margin-right: 10px;
+    margin-left: 2px;
+}
+
+.star-rating-wrapper {
+    margin-top: 2px;
+}
+
+.facilities-wrapper {
+    margin-top: 5px;
+}
+
+.star-rating {
+    font-size: 15px;
+}
+
+@media (max-width: 959px) {
+    #filter-wrapper {
+        display: none;
+    }
+}
+
+@media (max-width: 745px) {
+    .facilities-text {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .select-button {
+        font-size: 5px;
+    }
+}

@@ -1,0 +1,60 @@
+[
+  {
+    "type":"node",
+    "cityName":"bangalore",
+    "basicServices":"",
+    "childServices":{
+      "stay":[
+        {
+          "requestedData":{
+
+          },
+          "selectedData":{
+
+          }
+        },
+        {
+          "requestedData":{
+
+          },
+          "selectedData":{
+
+          }
+        }
+      ],
+      "localTravel":[
+        {
+          "requestedData":{
+
+          },
+          "selectedData":{
+
+          }
+        },
+        {
+          "requestedData":{
+
+          },
+          "selectedData":{
+
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type":"edge",
+    "childServices":{
+     "booking":[
+       {
+         "requestedData":{
+
+         },
+         "selectedData":{
+
+         }
+       }
+     ]
+    }
+  }
+]

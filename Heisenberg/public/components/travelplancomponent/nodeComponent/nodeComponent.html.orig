@@ -1,0 +1,76 @@
+<<<<<<< HEAD
+<span>{{node.travelelement.essential.noDependencyData.location}}</span>
+<i class="material-icons" ng-click="node.show_autocomplete()" style="font-size: 12px">mode_edit</i>
+<div class="node" click-outside="plan.closeThis(value)"
+     outside-if-not="nodeid,node-md-main-action">
+    <div class="node-md" ng-click="node.selectednode(node.currentnode, ['stay','localTravel'])">
+        {{node.travelelement.essential.noDependencyData.location|limitTo:1|uppercase}}
+    </div>
+    <i class="material-icons node-stay" ng-click="node.selectednode(node.currentnode, ['stay'])">hotel</i>
+    <i class="material-icons node-local-travel" ng-click="node.selectednode(node.currentnode, ['localtravel'])">directions_car</i>
+    <div class="node-md-action-input" id="node-md-main-action" ng-show="node.edit==true">
+        <md-autocomplete flex required
+                         md-input-name="autocompleteField"
+                         md-input-minlength="2"
+                         md-input-maxlength="18"
+                         md-no-cache="node.noCache"
+                         md-selected-item="node.selectedItem"
+                         md-search-text="node.searchText"
+                         md-items="item in node.querySearch(node.searchText)"
+                         md-item-text="item.display"
+                         md-floating-label="City">
+            <md-item-template>
+                <span md-highlight-text="node.searchText">{{item.display}}</span>
+            </md-item-template>
+            <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+                <div ng-message="required">You <b>must</b> have a favorite state.</div>
+                <div ng-message="minlength">Your entry is not long enough.</div>
+                <div ng-message="maxlength">Your entry is too long.</div>
+            </div>
+        </md-autocomplete>
+    </div>
+=======
+>>>>>>> 3c0ea8c37651a85714619e4acf363120414c8374
+
+<span ng-click="node.show_autocomplete()">{{node.travelelement.essential.noDependencyData.location||'edit'}}</span>
+<<<<<<< HEAD
+
+<custom-input-box class="node-md-action-input"  type="{{node.locationMetaData.type}}" label="{{node.locationMetaData.displayName}}" bind-data="node.travelelement[node.locationMetaData.id]"
+id="{{node.locationMetaData.id}}" specific-attr="node.locationMetaData.specificAttr"  reflect-custom-input="node.onReflect(keyString,value,id)"></custom-input-box>
+
+=======
+<div ng-show="node.edit==true">
+<custom-input-box class="node-md-action-input"  type="{{node.locationMetaData.type}}" label="{{node.locationMetaData.displayName}}" bind-data="node.travelelement[node.locationMetaData.id]"
+id="{{node.locationMetaData.id}}" specific-attr="node.locationMetaData.specificAttr"  reflect-custom-input="node.onReflect(keyString,value,id)"></custom-input-box>
+</div>
+<!--
+<div class="node-md-action-input" id="node-md-main-action" ng-show="node.edit==true">
+  <md-autocomplete flex required
+  md-input-name="autocompleteField"
+  md-input-minlength="2"
+  md-input-maxlength="18"
+  md-no-cache="node.noCache"
+  md-selected-item="node.selectedItem"
+  md-search-text="node.searchText"
+  md-items="item in node.querySearch(node.searchText)"
+  md-item-text="item.display"
+  md-floating-label="City">
+  <md-item-template>
+    <span md-highlight-text="node.searchText">{{item.display}}</span>
+  </md-item-template>
+  <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+    <div ng-message="required">You <b>must</b> have a favorite state.</div>
+    <div ng-message="minlength">Your entry is not long enough.</div>
+    <div ng-message="maxlength">Your entry is too long.</div>
+  </div>
+</md-autocomplete>
+</div> -->
+>>>>>>> d7e1a34b27c791fb3233c2d6064921c300069dc7
+<div class="node" click-outside="node.closeThis(value)" outside-if-not="nodeid,node-md-main-action">
+  <div class="node-md" ng-click="node.sendDetailsOfElement(node.currentnode)">
+    {{node.travelelement.essential.noDependencyData.location|limitTo:3|uppercase}}
+  </div>
+  <div ng-repeat="(key,value) in node.locationchildservices">
+    <i class="material-icons" ng-click="node.sendDetailsOfChild(node.currentnode,key)">{{value.icons}}</i>
+  </div>
+</div>
